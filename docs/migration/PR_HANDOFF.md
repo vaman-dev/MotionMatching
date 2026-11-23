@@ -1,5 +1,8 @@
 # M1 pull request handoff
 
+Published review: [draft PR #1](https://github.com/vaman-dev/MotionMatching/pull/1).
+Remote `main` and the feature branch are pushed; the PR remains unmerged.
+
 ## Scope
 
 The published review branch is `feature/motion-matching-m1-publication`, targeting

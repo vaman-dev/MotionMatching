@@ -2,6 +2,9 @@
 
 ## 2026-11-23 — Git publication preparation
 
+- **Published:** `origin` is `https://github.com/vaman-dev/MotionMatching.git`. Baseline `e7f01d8` pushed to remote `main`; migration branch `feature/motion-matching-m1-publication` pushed with upstream tracking. Draft PR [#1](https://github.com/vaman-dev/MotionMatching/pull/1) verified OPEN, targeting main. GitHub CLI used the existing Git credential manager credential in process memory; no token was printed or stored in repository files. All 111 baseline LFS files (approximately 164 MB) uploaded successfully. No merge or force push performed.
+- **Committed-export check:** exported committed tooling and assembly sources to ignored `.utmp/pr-validation`; 20 tests plus static assembly/scaffold checks passed independently of unrelated dirty files. Remote repository-hygiene CI started on PR creation; its result is reported separately after completion. Unity scene validation remains blocked in a clean checkout by the excluded assets documented in the draft PR.
+
 - Publication correction: historical Git objects include a 115,014,209-byte FBX exceeding GitHub's limit. Stopped the initial upload before any refs arrived. Created separate snapshot root `e7f01d8` with exactly the `13c8484` tree and existing LFS pointers; replayed reviewed trees as `b7005f6` and `6a255eb` on `feature/motion-matching-m1-publication`. Original local branches/history and dirty files remain preserved. Remote main uses the snapshot root, not the incompatible old history.
 
 - User explicitly authorized branch creation, commits, push and a PR to `https://github.com/vaman-dev/MotionMatching.git`. Added the requested origin and created `feature/motion-matching-m1-pr`; the destination returned no refs. Preserve the existing local main branch and use original baseline `13c8484` as the remote PR base.
