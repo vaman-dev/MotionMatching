@@ -1,0 +1,6 @@
+{
+  "name": "MotionMatching.Runtime",
+  "rootNamespace": "MotionMatching.Runtime",
+  "references": ["MotionMatching.Core", "Unity.InputSystem", "Unity.Cinemachine", "Unity.Animation.Rigging"],
+  "autoReferenced": true
+}

@@ -1,7 +1,10 @@
 # M1 pull request handoff
 
-Published review: [draft PR #1](https://github.com/vaman-dev/MotionMatching/pull/1).
-Remote `main` and the feature branch are pushed; the PR remains unmerged.
+> Historical M0/M1 record: original source paths and test artifacts below describe that stage. Current source ownership is in [DIRECTORY_LAYOUT.md](DIRECTORY_LAYOUT.md), the consolidation audit is [CONSOLIDATION_AUDIT.md](CONSOLIDATION_AUDIT.md), and current execution evidence is in [PROGRESS.md](../PROGRESS.md).
+
+Published review: [PR #1](https://github.com/vaman-dev/MotionMatching/pull/1),
+merged as `efad2d3` on 2026-11-23. It was opened as draft with the prerequisites
+below. Its merge does not resolve the documented licensed-asset prerequisites.
 
 ## Scope
 
@@ -34,7 +37,8 @@ checkout of this branch. It references these preexisting untracked assets:
 These source assets are excluded pending redistribution clearance. The skybox
 metadata identifies an Asset Store package. A clean-checkout Unity scene/test
 run is blocked until licensed assets are supplied with the required GUIDs or
-reviewed replacements are provided. The PR must remain draft for this reason.
+reviewed replacements are provided. These prerequisites were the reason for
+opening the PR as draft; its later merge does not certify a clean checkout.
 No source assets were deleted or rewritten to prepare this PR.
 
 ## Validation

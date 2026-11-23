@@ -5,7 +5,7 @@ description: Inspect and validate animation clip metadata, root trajectories and
 
 # Motion data audit skill
 
-1. Read `MotionMatchingArchitecture.md`, `docs/data/FEATURE_SCHEMA.md`, original `Report.md`.
+1. Read `docs/MotionMatchingArchitecture.md`, `docs/data/FEATURE_SCHEMA.md`, original `docs/Report.md`.
 2. Inventory actual animation source, Avatar, looping/import settings, root curves, foot contact and gait coverage.
 3. Check whether the sampled hips track root motion; for Humanoid root, verify projected/evaluated `Animator.deltaPosition` semantics and import configuration.
 4. Validate sample Hz, clip length, horizon boundaries and consistent Unity X-right Y-up Z-forward local basis.

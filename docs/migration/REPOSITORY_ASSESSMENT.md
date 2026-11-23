@@ -1,5 +1,7 @@
 # Repository assessment and migration plan
 
+> Historical M0/M1 record: original source paths and test artifacts below describe that stage. Current source ownership is in [DIRECTORY_LAYOUT.md](DIRECTORY_LAYOUT.md), the consolidation audit is [CONSOLIDATION_AUDIT.md](CONSOLIDATION_AUDIT.md), and current execution evidence is in [PROGRESS.md](../PROGRESS.md).
+
 Date: 2026-11-23. Inventory and report comparison below describe the baseline before migration changes. Subsequent motor/assembly implementation, scene detachment and final Unity validation are recorded separately below. Exact execution evidence is in [BASELINE.md](BASELINE.md) and `PROGRESS.md`. `Report.md` remains a historical snapshot.
 
 ## Confirmed baseline

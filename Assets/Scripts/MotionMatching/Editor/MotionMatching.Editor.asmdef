@@ -1,0 +1,7 @@
+{
+  "name": "MotionMatching.Editor",
+  "rootNamespace": "MotionMatching.Editor",
+  "references": ["MotionMatching.Core", "MotionMatching.Runtime", "Unity.InputSystem", "Unity.Cinemachine"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

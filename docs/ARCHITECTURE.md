@@ -1,5 +1,7 @@
 # TPS Shooter — Architecture Flow
 
+> Historical shooter architecture: source paths and behavior below predate consolidation. See [current architecture](MotionMatchingArchitecture.md) and [directory ownership](migration/DIRECTORY_LAYOUT.md).
+
 This document explains how the project works end-to-end and how the **aim pipeline**
 operates across the entire system. It is a Unity TPS prototype built from 18 scripts
 across four cooperating subsystems.

@@ -1,0 +1,1534 @@
+﻿{
+    "schemaVersion":  1,
+    "moves":  [
+                  {
+                      "source":  "Assets/Scripts/Gun/RifleAimAlignmentDebug.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/RifleAimAlignmentDebug.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Gun/RifleAimAlignmentDebug.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/RifleAimAlignmentDebug.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Gun/WeaponAimAlignment.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/WeaponAimAlignment.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Gun/WeaponAimAlignment.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/WeaponAimAlignment.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Ch15_nonPBR@Rifle Idle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Ch15_nonPBR@Rifle Idle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Ch15_nonPBR@Rifle Idle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Ch15_nonPBR@Rifle Idle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Rifle Idle 1.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Rifle Idle 1.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Rifle Idle 1.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Rifle Idle 1.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/RifleIdleAim.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/RifleIdleAim.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/RifleIdleAim.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/RifleIdleAim.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/RifleUpperBodyMask.mask",
+                      "destination":  "Assets/Animations/MotionMatching/Source/RifleUpperBodyMask.mask"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/RifleUpperBodyMask.mask.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/RifleUpperBodyMask.mask.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/MouseWorldSphereTestMouseWorldSphereTest.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/MouseWorldSphereTestMouseWorldSphereTest.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/MouseWorldSphereTestMouseWorldSphereTest.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/MouseWorldSphereTestMouseWorldSphereTest.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerAimRigController.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/PlayerAimRigController.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerAimRigController.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/PlayerAimRigController.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerAimTargetProvider.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/PlayerAimTargetProvider.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerAimTargetProvider.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/PlayerAimTargetProvider.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerLeftHandIK.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/PlayerLeftHandIK.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerLeftHandIK.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/PlayerLeftHandIK.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/TPSCameraController.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/TPSCameraController.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/TPSCameraController.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/TPSCameraController.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Editor/MigrationBaselineCapture.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Editor/MigrationBaselineCapture.cs"
+                  },
+                  {
+                      "source":  "Assets/Editor/MigrationBaselineCapture.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Editor/MigrationBaselineCapture.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching.meta",
+                      "destination":  "Assets/Scripts/MotionMatching.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Animation.meta",
+                      "destination":  "Assets/Animations/MotionMatching.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Animation/UnarmedLocomotion.controller",
+                      "destination":  "Assets/Animations/MotionMatching/UnarmedLocomotion.controller"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Animation/UnarmedLocomotion.controller.meta",
+                      "destination":  "Assets/Animations/MotionMatching/UnarmedLocomotion.controller.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Core.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Core.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Core/MotionMatching.Core.asmdef",
+                      "destination":  "Assets/Scripts/MotionMatching/Core/MotionMatching.Core.asmdef"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Core/MotionMatching.Core.asmdef.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Core/MotionMatching.Core.asmdef.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Core/RootMotionAccumulator.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Core/RootMotionAccumulator.cs"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Core/RootMotionAccumulator.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Core/RootMotionAccumulator.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Editor.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Editor.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Editor/AssemblyBoundaryAudit.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Editor/AssemblyBoundaryAudit.cs"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Editor/AssemblyBoundaryAudit.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Editor/AssemblyBoundaryAudit.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Editor/MotionMatching.Editor.asmdef",
+                      "destination":  "Assets/Scripts/MotionMatching/Editor/MotionMatching.Editor.asmdef"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Editor/MotionMatching.Editor.asmdef.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Editor/MotionMatching.Editor.asmdef.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Runtime.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Runtime/CharacterMotor.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Motor/CharacterMotor.cs"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Runtime/CharacterMotor.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Motor/CharacterMotor.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Runtime/FreeCameraLookInput.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Input/FreeCameraLookInput.cs"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Runtime/FreeCameraLookInput.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Input/FreeCameraLookInput.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Runtime/MotionMatching.Runtime.asmdef",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/MotionMatching.Runtime.asmdef"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Runtime/MotionMatching.Runtime.asmdef.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/MotionMatching.Runtime.asmdef.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Editor.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/EditMode.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Editor/LocomotionSceneTests.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/EditMode/LocomotionSceneTests.cs"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Editor/LocomotionSceneTests.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/EditMode/LocomotionSceneTests.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Editor/MotionMatching.Tests.Editor.asmdef",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/EditMode/MotionMatching.Tests.Editor.asmdef"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Editor/MotionMatching.Tests.Editor.asmdef.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/EditMode/MotionMatching.Tests.Editor.asmdef.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Editor/RootMotionAccumulatorTests.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/EditMode/RootMotionAccumulatorTests.cs"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Editor/RootMotionAccumulatorTests.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/EditMode/RootMotionAccumulatorTests.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Runtime.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/PlayMode.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Runtime/CharacterMotorTests.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/PlayMode/CharacterMotorTests.cs"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Runtime/CharacterMotorTests.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/PlayMode/CharacterMotorTests.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Runtime/LegacyMotorRegressionTests.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/PlayMode/LegacyMotorRegressionTests.cs"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Runtime/LegacyMotorRegressionTests.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/PlayMode/LegacyMotorRegressionTests.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Runtime/MotionMatching.Tests.Runtime.asmdef",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/PlayMode/MotionMatching.Tests.Runtime.asmdef"
+                  },
+                  {
+                      "source":  "Assets/MotionMatching/Tests/Runtime/MotionMatching.Tests.Runtime.asmdef.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Tests/PlayMode/MotionMatching.Tests.Runtime.asmdef.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Gun/WeaponPickupItem.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/WeaponPickupItem.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Gun/WeaponPickupItem.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/WeaponPickupItem.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/Ch15_nonPBR@Firing Rifle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/Ch15_nonPBR@Firing Rifle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/Ch15_nonPBR@Firing Rifle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/Ch15_nonPBR@Firing Rifle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/Ch15_nonPBR@Rifle Idle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/Ch15_nonPBR@Rifle Idle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/Ch15_nonPBR@Rifle Idle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/Ch15_nonPBR@Rifle Idle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/RilfeAnimation.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/RilfeAnimation.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/RilfeAnimation.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/RilfeAnimation.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/cover to stand (2).fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/cover to stand (2).fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/cover to stand (2).fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/cover to stand (2).fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/cover to stand.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/cover to stand.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/cover to stand.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/cover to stand.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/crouched sneaking left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/crouched sneaking left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/crouched sneaking left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/crouched sneaking left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/crouched sneaking right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/crouched sneaking right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/crouched sneaking right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/crouched sneaking right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/falling idle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/falling idle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/falling idle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/falling idle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/falling to roll.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/falling to roll.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/falling to roll.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/falling to roll.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/hard landing.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/hard landing.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/hard landing.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/hard landing.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle (2).fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle (2).fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle (2).fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle (2).fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle (3).fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle (3).fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle (3).fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle (3).fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle (4).fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle (4).fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle (4).fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle (4).fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle (5).fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle (5).fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle (5).fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle (5).fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/idle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/idle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/jumping up.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/jumping up.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/jumping up.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/jumping up.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/left cover sneak.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/left cover sneak.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/left cover sneak.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/left cover sneak.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/left turn.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/left turn.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/left turn.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/left turn.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/right cover sneak.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/right cover sneak.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/right cover sneak.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/right cover sneak.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/right turn.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/right turn.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/right turn.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/right turn.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/run to stop.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/run to stop.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/run to stop.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/run to stop.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/running.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/running.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/running.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/running.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/stand to cover (2).fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/stand to cover (2).fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/stand to cover (2).fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/stand to cover (2).fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/stand to cover.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/stand to cover.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/stand to cover.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/stand to cover.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/walking.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/walking.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Action Adventure Pack/walking.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Action Adventure Pack/walking.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Ch15_nonPBR.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Ch15_nonPBR.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Ridle.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Ridle.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Ridle.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Ridle.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/RilfleRight.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/RilfleRight.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/RilfleRight.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/RilfleRight.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Rrun.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Rrun.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Rrun.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Rrun.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/RrunBackwards.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/RrunBackwards.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/RrunBackwards.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/RrunBackwards.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Rwalk.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Rwalk.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/Rwalk.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/Rwalk.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/RwalkBack.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/RwalkBack.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/RwalkBack.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/RwalkBack.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/firing rifle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/firing rifle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/firing rifle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/firing rifle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/hit reaction.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/hit reaction.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/hit reaction.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/hit reaction.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/reloading.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/reloading.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/reloading.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/reloading.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/rifle aiming idle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/rifle aiming idle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/rifle aiming idle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/rifle aiming idle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/rifle jump.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/rifle jump.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/rifle jump.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/rifle jump.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/rifle run.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/rifle run.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/rifle run.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/rifle run.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/run backwards.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/run backwards.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/run backwards.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/run backwards.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/strafe (2).fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/strafe (2).fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/strafe (2).fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/strafe (2).fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/strafe left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/strafe left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/strafe left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/strafe left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/strafe right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/strafe right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/strafe right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/strafe right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/strafe.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/strafe.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/strafe.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/strafe.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/toss grenade.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/toss grenade.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/toss grenade.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/toss grenade.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/turn left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/turn left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/turn left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/turn left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/turning right 45 degrees.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/turning right 45 degrees.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/turning right 45 degrees.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/turning right 45 degrees.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/walking backwards.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/walking backwards.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/walking backwards.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/walking backwards.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/walking.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/walking.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Basic Shooter Pack/walking.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Basic Shooter Pack/walking.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Ch15_nonPBR@Rifle Aiming Idle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Ch15_nonPBR@Rifle Aiming Idle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Ch15_nonPBR@Rifle Aiming Idle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Ch15_nonPBR@Rifle Aiming Idle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Dive Roll.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Dive Roll.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Dive Roll.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Dive Roll.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Dive Roll2.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Dive Roll2.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Dive Roll2.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Dive Roll2.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Dive Roll3.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Dive Roll3.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Dive Roll3.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Dive Roll3.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Fast Run.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Fast Run.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Fast Run.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Fast Run.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Firing Rifle.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Firing Rifle.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Firing Rifle.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Firing Rifle.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Idle.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Idle.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Idle.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Idle.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Jump.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Jump.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Jump.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Jump.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/LeftStraffRun.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/LeftStraffRun.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/LeftStraffRun.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/LeftStraffRun.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/LeftStraffe.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/LeftStraffe.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/LeftStraffe.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/LeftStraffe.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/Ch15_nonPBR@Run Backward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/Ch15_nonPBR@Run Backward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/Ch15_nonPBR@Run Backward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/Ch15_nonPBR@Run Backward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/Ch15_nonPBR@Walking Backward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/Ch15_nonPBR@Walking Backward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/Ch15_nonPBR@Walking Backward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/Ch15_nonPBR@Walking Backward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/X Bot.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/X Bot.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/X Bot.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/X Bot.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/X Bot@Fast Run.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/X Bot@Fast Run.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/X Bot@Fast Run.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/X Bot@Fast Run.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/X Bot@Run.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/X Bot@Run.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/X Bot@Run.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/X Bot@Run.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/idle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/idle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/idle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/idle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/jump.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/jump.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/jump.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/jump.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/left strafe walking.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/left strafe walking.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/left strafe walking.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/left strafe walking.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/left strafe.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/left strafe.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/left strafe.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/left strafe.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/left turn 90.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/left turn 90.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/left turn 90.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/left turn 90.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/left turn.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/left turn.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/left turn.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/left turn.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/right strafe walking.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/right strafe walking.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/right strafe walking.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/right strafe walking.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/right strafe.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/right strafe.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/right strafe.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/right strafe.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/right turn 90.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/right turn 90.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/right turn 90.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/right turn 90.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/right turn.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/right turn.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/right turn.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/right turn.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/walking.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/walking.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Locomotion Pack/walking.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Locomotion Pack/walking.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/PlayerController.controller",
+                      "destination":  "Assets/Animations/MotionMatching/Source/PlayerController.controller"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/PlayerController.controller.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/PlayerController.controller.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/Ch15_nonPBR.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/Ch15_nonPBR.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/Ch15_nonPBR.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/Ch15_nonPBR.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/RifleLeft.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/RifleLeft.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/RifleLeft.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/RifleLeft.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/RunLeft.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/RunLeft.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/RunLeft.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/RunLeft.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/RunRight.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/RunRight.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/RunRight.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/RunRight.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/SprinForward.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/SprinForward.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/SprinForward.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/SprinForward.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/SprinLeft.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/SprinLeft.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/SprinLeft.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/SprinLeft.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/SprintBackward.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/SprintBackward.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/SprintBackward.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/SprintBackward.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/SprintRight.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/SprintRight.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/SprintRight.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/SprintRight.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/crouching turn 90 left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/crouching turn 90 left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/crouching turn 90 left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/crouching turn 90 left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/crouching turn 90 right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/crouching turn 90 right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/crouching turn 90 right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/crouching turn 90 right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death crouching headshot front.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death crouching headshot front.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death crouching headshot front.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death crouching headshot front.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from back headshot.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from back headshot.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from back headshot.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from back headshot.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from front headshot.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from front headshot.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from front headshot.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from front headshot.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from the back.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from the back.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from the back.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from the back.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from the front.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from the front.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/death from the front.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/death from the front.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/idle aiming.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/idle aiming.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/idle aiming.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/idle aiming.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/idle crouching aiming.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/idle crouching aiming.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/idle crouching aiming.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/idle crouching aiming.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/idle crouching.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/idle crouching.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/idle crouching.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/idle crouching.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/idle.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/idle.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/idle.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/idle.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/jump down.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/jump down.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/jump down.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/jump down.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/jump loop.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/jump loop.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/jump loop.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/jump loop.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/jump up.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/jump up.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/jump up.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/jump up.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run backward left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run backward left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run backward left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run backward left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run backward right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run backward right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run backward right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run backward right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run backward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run backward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run backward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run backward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run forward left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run forward left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run forward left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run forward left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run forward right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run forward right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run forward right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run forward right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run forward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run forward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run forward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run forward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/run right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/run right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint backward left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint backward left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint backward left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint backward left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint backward right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint backward right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint backward right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint backward right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint backward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint backward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint backward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint backward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint forward left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint forward left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint forward left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint forward left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint forward right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint forward right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint forward right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint forward right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint forward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint forward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint forward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint forward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/sprint right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/sprint right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/turn 90 left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/turn 90 left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/turn 90 left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/turn 90 left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/turn 90 right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/turn 90 right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/turn 90 right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/turn 90 right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk backward left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk backward left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk backward left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk backward left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk backward right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk backward right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk backward right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk backward right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk backward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk backward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk backward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk backward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching backward left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching backward left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching backward left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching backward left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching backward right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching backward right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching backward right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching backward right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching backward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching backward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching backward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching backward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching forward left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching forward left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching forward left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching forward left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching forward right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching forward right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching forward right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching forward right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching forward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching forward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching forward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching forward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk crouching right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk crouching right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk forward left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk forward left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk forward left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk forward left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk forward right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk forward right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk forward right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk forward right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk forward.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk forward.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk forward.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk forward.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk left.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk left.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk left.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk left.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk right.fbx",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk right.fbx"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Pro Rifle Pack/walk right.fbx.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Pro Rifle Pack/walk right.fbx.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Rifle Aiming Idle 1.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Rifle Aiming Idle 1.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Rifle Aiming Idle 1.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Rifle Aiming Idle 1.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Rifle Idle.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Rifle Idle.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Rifle Idle.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Rifle Idle.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Rifle.mask",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Rifle.mask"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Rifle.mask.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Rifle.mask.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/RifleRun.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/RifleRun.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/RifleRun.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/RifleRun.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/RightStraffe.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/RightStraffe.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/RightStraffe.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/RightStraffe.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/RightStraffeRun.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/RightStraffeRun.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/RightStraffeRun.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/RightStraffeRun.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Run Backward.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Run Backward.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Run Backward.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Run Backward.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Run To Dive.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Run To Dive.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Run To Dive.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Run To Dive.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Walking Backward.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Walking Backward.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/Walking Backward.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/Walking Backward.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/walking.anim",
+                      "destination":  "Assets/Animations/MotionMatching/Source/walking.anim"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/Animation/walking.anim.meta",
+                      "destination":  "Assets/Animations/MotionMatching/Source/walking.anim.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/FootstepAnimationEventReceiver.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Animation/FootstepAnimationEventReceiver.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/FootstepAnimationEventReceiver.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Animation/FootstepAnimationEventReceiver.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/FootstepResetStateBehaviour.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Animation/FootstepResetStateBehaviour.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/FootstepResetStateBehaviour.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Animation/FootstepResetStateBehaviour.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerAnimator.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Animation/PlayerAnimator.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerAnimator.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Animation/PlayerAnimator.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerController.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Character/PlayerController.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerController.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Character/PlayerController.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerDiveRollState.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/States/PlayerDiveRollState.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerDiveRollState.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/States/PlayerDiveRollState.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerInputReader.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Input/PlayerInputReader.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerInputReader.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Input/PlayerInputReader.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerInteractionSystem.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/PlayerInteractionSystem.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerInteractionSystem.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/LegacyShooter/PlayerInteractionSystem.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerJumpState.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/States/PlayerJumpState.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerJumpState.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/States/PlayerJumpState.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerLocomotionState.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/States/PlayerLocomotionState.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerLocomotionState.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/States/PlayerLocomotionState.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerStateId.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/States/PlayerStateId.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/PlayerStateId.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/States/PlayerStateId.cs.meta"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/RootMotionRelay.cs",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Animation/RootMotionRelay.cs"
+                  },
+                  {
+                      "source":  "Assets/Scripts/Player/RootMotionRelay.cs.meta",
+                      "destination":  "Assets/Scripts/MotionMatching/Runtime/Animation/RootMotionRelay.cs.meta"
+                  },
+                  {
+                      "source":  "MotionMatchingArchitecture.md",
+                      "destination":  "docs/MotionMatchingArchitecture.md"
+                  },
+                  {
+                      "source":  "PLAN.md",
+                      "destination":  "docs/PLAN.md"
+                  },
+                  {
+                      "source":  "PROGRESS.md",
+                      "destination":  "docs/PROGRESS.md"
+                  },
+                  {
+                      "source":  "PROJECT.md",
+                      "destination":  "docs/PROJECT.md"
+                  },
+                  {
+                      "source":  "Report.md",
+                      "destination":  "docs/Report.md"
+                  },
+                  {
+                      "source":  "ReusablePackages.md",
+                      "destination":  "docs/ReusablePackages.md"
+                  },
+                  {
+                      "source":  "Unity.md",
+                      "destination":  "docs/Unity.md"
+                  }
+              ],
+    "emptyFolderMetaRemovals":  [
+                                    "Assets/Scripts/Player.meta",
+                                    "Assets/Scripts/Gun.meta",
+                                    "Assets/Editor.meta",
+                                    "Assets/Scripts/Player/UI.meta"
+                                ],
+    "intentionalEdits":  [
+                             "Assets/Scripts/MotionMatching/Runtime/MotionMatching.Runtime.asmdef",
+                             "Assets/Scripts/MotionMatching/Editor/MotionMatching.Editor.asmdef",
+                             "Assets/Scripts/MotionMatching/Editor/AssemblyBoundaryAudit.cs",
+                             "Assets/Scripts/MotionMatching/Tests/EditMode/LocomotionSceneTests.cs",
+                             "Assets/Scripts/MotionMatching/Tests/PlayMode/LegacyMotorRegressionTests.cs"
+                         ]
+}

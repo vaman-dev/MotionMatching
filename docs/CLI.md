@@ -11,9 +11,9 @@ powershell -ExecutionPolicy Bypass -File tools/mm.ps1 status
 powershell -ExecutionPolicy Bypass -File tools/mm.ps1 validate
 powershell -ExecutionPolicy Bypass -File tools/mm.ps1 test
 
-# Current assembly checks and M1 source preservation (do not invoke Unity)
+# Current assembly and consolidation preservation checks (do not invoke Unity)
 py -3 -B tools/validate_assemblies.py
-py -3 -B tools/validate_migration.py --mode m1 --baseline .utmp/m0-baseline/manifest.json
+py -3 -B tools/validate_migration.py --mode consolidation --baseline .utmp/consolidation-start/manifest.json --move-map docs/migration/consolidation-moves.json
 
 # Start Codex in project context
 codex
@@ -23,9 +23,9 @@ Within Codex: run `/plan` before multi-file edits, ask for named agents (`github
 
 Suggested first Codex instruction:
 
-> Read AGENTS.md, PROJECT.md, PLAN.md, MotionMatchingArchitecture.md, Unity.md and the original Report.md. M0 only: inspect status, document baselines and cross-reference uncommitted work. Do not edit the Unity scene, assets or input files yet. Present a migration diff plan and list missing runtime evidence.
+> Read AGENTS.md, docs/PROJECT.md, docs/PLAN.md, docs/MotionMatchingArchitecture.md, docs/Unity.md and the original docs/Report.md. Inspect status and current milestone evidence before editing. Preserve unrelated working-tree changes and present a concrete dependency-aware plan.
 
-The GitHub agent may **propose** commit and push commands, but it must not push without explicit approval. `codex.yml` is a manually dispatched read-only review and requires repository secret `OPENAI_API_KEY`. It is not the user-signed-in Codex CLI session.
+The GitHub agent may **propose** commit and push commands, but it must not push without explicit approval. The owner removed the Codex GitHub Actions workflow. The project-scoped Codex agents and skills remain available; `.github/codex-review-prompt.md` remains a manual review template.
 
 ## Agent configuration and permission boundaries
 
@@ -41,7 +41,7 @@ Custom agents inherit the parent's permissions. A `sandbox_mode` value in a stan
 - The helper invokes Python with `-B` to avoid generated `__pycache__` directories. For direct checks, use `py -3 -B tools/validate_scaffold.py` or `py -3 -B -m unittest discover -s tools/tests -v`.
 - Python 3.10 lacks `tomllib`, and PyYAML is absent locally. The validator explicitly reports skipped TOML/YAML parsing while still checking required files, agent references and JSON. Python 3.11+ enables built-in TOML parsing. CI uses Python 3.12 and pinned PyYAML for both parsers.
 
-Both workflows were inspected statically. `github.yml` checks repository structure and scaffold tests on pull requests, manual dispatch and pushes to `main` or `master`; the latter was added because the actual baseline is on local `master`. No Git remote is configured, so a remote default branch is unverified. `codex.yml` performs an optional manual review with read-only repository permissions and a fixed prompt file. Neither compiles Unity. No GitHub Actions run or authenticated API review was performed during this inspection. The [official OpenAI GitHub Action documentation](https://learn.chatgpt.com/docs/github-action) describes the secret, prompt and final-message output used here.
+`github.yml` checks repository structure, assembly boundaries and Python tests on pull requests, manual dispatch and pushes to `main` or `master`. Origin is `https://github.com/vaman-dev/MotionMatching.git`, with default branch main. M1 PR #1 merged as `efad2d3`; its final repository-hygiene run passed. These are historical M1 remote results, not C1 CI coverage. The optional Codex workflow has been deleted at the owner's request; the validator no longer requires it. Repository hygiene CI does not compile Unity.
 
 ## Unity CLI and live Editor inspection
 
@@ -55,4 +55,4 @@ unity command scene get_hierarchy --project-path . --json
 
 The scene commands read current Editor memory, including dirty-state flags and hierarchy; they do not open or save scenes. Initial inspection found MotionMatchingTest active with seven roots and 102 GameObjects; M1 detachment reduces it to 82 objects. Readiness does not certify gameplay. Package backups and exact installation/test evidence are recorded in PROGRESS.md. Additional package/provider installations still require task authorization; no second bridge was installed.
 
-M0 preservation still requires a byte-identical clone. After deliberate M1 detachment, use the explicit M1 mode above: it preserves the original scene/controller, metadata, source assets, settings and recorded deletions, allowing only the two motor/relay source edits, authorized package files and dedicated scene changes. Assembly validation is also part of the repository hygiene workflow. These checks do not replace Unity test execution.
+M0/M1 validator modes retain their historical contracts and original paths for old snapshots. After C1 relocation, use consolidation mode with the verified local pre-refactor snapshot and reviewed move map. It checks relocated gameplay/source/metadata bytes, recorded deletions, protected settings/scenes and the unchanged historical Report. The snapshot is ignored local evidence; it is not available in a fresh checkout. Assembly validation is also part of the repository hygiene workflow. These checks do not replace Unity test execution.
