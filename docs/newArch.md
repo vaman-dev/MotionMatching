@@ -1,5 +1,7 @@
 # TPS Shooter — Codebase and Aiming Architecture
 
+> Historical shooter architecture: source paths and behavior below predate consolidation. See [current architecture](MotionMatchingArchitecture.md) and [directory ownership](migration/DIRECTORY_LAYOUT.md).
+
 > **Scope:** repository inspection on 2026-08-16 (commit `13c8484`). This report describes the code and the current `Test` scene configuration. It does not claim that disabled or unassigned systems are live.
 
 ## 1. Project at a glance

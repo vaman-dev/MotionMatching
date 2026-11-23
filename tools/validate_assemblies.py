@@ -4,13 +4,13 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = Path('Assets/MotionMatching')
+BASE = Path('Assets/Scripts/MotionMatching')
 FOLDERS = {
     'MotionMatching.Core': 'Core',
     'MotionMatching.Runtime': 'Runtime',
     'MotionMatching.Editor': 'Editor',
-    'MotionMatching.Tests.Editor': 'Tests/Editor',
-    'MotionMatching.Tests.Runtime': 'Tests/Runtime',
+    'MotionMatching.Tests.Editor': 'Tests/EditMode',
+    'MotionMatching.Tests.Runtime': 'Tests/PlayMode',
 }
 PROJECT_REFERENCES = {
     'MotionMatching.Core': set(),
@@ -22,6 +22,7 @@ PROJECT_REFERENCES = {
 PACKAGE_NAMESPACES = {
     'Unity.InputSystem': r'\bUnityEngine\s*\.\s*InputSystem\b',
     'Unity.Cinemachine': r'\bUnity\s*\.\s*Cinemachine\b',
+    'Unity.Animation.Rigging': r'\bUnityEngine\s*\.\s*Animations\s*\.\s*Rigging\b',
 }
 
 
@@ -83,8 +84,8 @@ def validate_assemblies(root=ROOT):
         allowed = set(expected)
         is_test = name.startswith('MotionMatching.Tests.')
         is_editor = name.endswith('.Editor')
-        if name == 'MotionMatching.Runtime':
-            allowed.update(PACKAGE_NAMESPACES)
+        if name in ('MotionMatching.Runtime', 'MotionMatching.Editor'):
+            allowed.update(PACKAGE_NAMESPACES if name.endswith('.Runtime') else {'Unity.InputSystem', 'Unity.Cinemachine'})
         if is_test:
             allowed.add('UnityEngine.TestRunner')
             if is_editor:
@@ -124,21 +125,31 @@ def validate_assemblies(root=ROOT):
     for name in graph:
         visit(name)
 
-    runtime_sources = []
-    for first_party in (root/'Assets/Scripts', root/BASE):
-        for path in first_party.rglob('*.cs'):
-            relative = path.relative_to(first_party)
-            if 'Editor' in relative.parts:
-                continue
-            source = code_only(path.read_text(encoding='utf-8-sig'))
-            if re.search(r'\bUnityEditor\b', source):
-                errors.append(f'UnityEditor API in first-party runtime source: {path.relative_to(root).as_posix()}')
-            if path.is_relative_to(root/BASE/'Runtime'):
-                runtime_sources.append(source)
-    for package, pattern in PACKAGE_NAMESPACES.items():
-        refs = definitions.get('MotionMatching.Runtime', {}).get('references', [])
-        if package in refs and not any(re.search(pattern, source) for source in runtime_sources):
-            errors.append(f'unused Runtime package assembly reference: {package}')
+    sources = {name: [] for name in FOLDERS}
+    for path in (root/'Assets').rglob('*.cs'):
+        relative = path.relative_to(root).as_posix()
+        owners = [(len(owner.parent.parts), name) for owner, name in expected_paths.items()
+                  if path.is_relative_to(owner.parent)]
+        if not path.is_relative_to(root/BASE) or not owners:
+            errors.append(f'first-party C# source outside an owned assembly: {relative}')
+            continue
+        name = max(owners)[1]
+        source = code_only(path.read_text(encoding='utf-8-sig'))
+        sources[name].append(source)
+        if not name.endswith('.Editor') and re.search(r'\bUnityEditor\b', source):
+            errors.append(f'UnityEditor API in first-party runtime source: {relative}')
+        if name == 'MotionMatching.Core' and re.search(r'\bUnity(?:Engine|Editor)\b', source):
+            errors.append(f'Unity API in engine-free Core source: {relative}')
+        if 'Editor' in path.relative_to(root/BASE).parts and not name.endswith('.Editor'):
+            errors.append(f'Editor source owned by non-Editor assembly: {relative}')
+    for name in ('MotionMatching.Runtime', 'MotionMatching.Editor'):
+        refs = definitions.get(name, {}).get('references', [])
+        for package, pattern in PACKAGE_NAMESPACES.items():
+            used = any(re.search(pattern, source) for source in sources[name])
+            if package in refs and not used:
+                errors.append(f'unused {name.rsplit(".", 1)[1]} package assembly reference: {package}')
+            elif used and package not in refs:
+                errors.append(f'missing package assembly reference: {name}: {package}')
     return errors
 
 

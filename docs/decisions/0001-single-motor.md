@@ -18,7 +18,7 @@ The relay retains the existing normal-mode animation root source and filtering, 
 - Animator, Playables and gameplay code must not call capsule movement independently.
 - Actual displacement is exposed now; trajectory prediction is future work.
 - The current schedule supports normal Animator evaluation. Future fixed/manual Playables evaluation requires explicit timing tests.
-- The five named assemblies isolate pure buffering, Unity runtime, Editor audit and tests. Legacy gameplay remains in Assembly-CSharp; migration-only tests use reflection across that boundary.
+- The five named assemblies isolate pure buffering, Unity runtime, Editor audit and tests. At M1, legacy gameplay remained in Assembly-CSharp; ADR-0002 consolidates it into Runtime while preserving the motor contract.
 
 ## Validation evidence
 

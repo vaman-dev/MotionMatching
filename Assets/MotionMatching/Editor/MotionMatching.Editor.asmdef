@@ -1,7 +1,0 @@
-{
-  "name": "MotionMatching.Editor",
-  "rootNamespace": "MotionMatching.Editor",
-  "references": ["MotionMatching.Core", "MotionMatching.Runtime"],
-  "includePlatforms": ["Editor"],
-  "autoReferenced": true
-}

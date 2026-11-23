@@ -5,7 +5,7 @@ description: Diagnose Unity motion matching bugs with reproducible steps, tracin
 
 # Bug triage skill
 
-1. Read `agents/bug-agent.md` and `MotionMatchingArchitecture.md`.
+1. Read `agents/bug-agent.md` and `docs/MotionMatchingArchitecture.md`.
 2. Record scene, game state, input, frame/time, clip/frame, database/schema, motor grounded state, actual vs desired velocity.
 3. Trace query construction -> search -> selected clip -> Playables -> root delta -> CharacterController; find competing writers.
 4. Reproduce if Unity is available, otherwise mark `unverified` explicitly.

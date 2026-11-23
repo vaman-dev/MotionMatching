@@ -87,6 +87,32 @@ class TestAssemblyBoundaries(unittest.TestCase):
         (self.path('MotionMatching.Runtime').parent/'Input.cs').write_text('using UnityEngine.InputSystem;', encoding='utf-8')
         self.assertEqual([], validate_assemblies(self.root))
 
+    def test_editor_package_usage_requires_reference_and_rejects_unused_reference(self):
+        path = self.path('MotionMatching.Editor').parent/'Capture.cs'
+        path.write_text('using UnityEngine.InputSystem;', encoding='utf-8')
+        self.assertIn('missing package assembly reference: MotionMatching.Editor: Unity.InputSystem', validate_assemblies(self.root))
+        self.change('MotionMatching.Editor', references=['MotionMatching.Core', 'MotionMatching.Runtime', 'Unity.InputSystem'])
+        self.assertEqual([], validate_assemblies(self.root))
+        path.write_text('class Capture {}', encoding='utf-8')
+        self.assertIn('unused Editor package assembly reference: Unity.InputSystem', validate_assemblies(self.root))
+
+    def test_orphan_first_party_source_and_unowned_base_source_are_rejected(self):
+        orphan = self.root/'Assets/Editor/OldCapture.cs'
+        orphan.parent.mkdir(parents=True)
+        orphan.write_text('class OldCapture {}', encoding='utf-8')
+        (self.root/BASE/'Unowned.cs').write_text('class Unowned {}', encoding='utf-8')
+        errors = validate_assemblies(self.root)
+        self.assertEqual(2, sum('outside an owned assembly' in error for error in errors))
+
+    def test_core_api_and_nested_editor_leak_are_rejected(self):
+        (self.path('MotionMatching.Core').parent/'EngineLeak.cs').write_text('using UnityEngine;', encoding='utf-8')
+        editor = self.path('MotionMatching.Runtime').parent/'Editor/Leak.cs'
+        editor.parent.mkdir()
+        editor.write_text('class Leak {}', encoding='utf-8')
+        errors = validate_assemblies(self.root)
+        self.assertTrue(any('engine-free Core' in error for error in errors))
+        self.assertTrue(any('Editor source owned by non-Editor assembly' in error for error in errors))
+
 
 if __name__ == '__main__':
     unittest.main()

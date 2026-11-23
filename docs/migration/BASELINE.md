@@ -1,5 +1,7 @@
 # M0 baseline record
 
+> Historical M0/M1 record: original source paths and test artifacts below describe that stage. Current source ownership is in [DIRECTORY_LAYOUT.md](DIRECTORY_LAYOUT.md), the consolidation audit is [CONSOLIDATION_AUDIT.md](CONSOLIDATION_AUDIT.md), and current execution evidence is in [PROGRESS.md](../PROGRESS.md).
+
 Date: 2026-11-23. Baseline commit: `13c84848ef2451067b4f8221670fbf4f64d28b86`. Migration branch: `feature/motion-matching-migration`. This record preserves early M0 attempts; subsequent interactive baselines and M1 validation are recorded below and in `PROGRESS.md`. Extended terrain/contact checks remain open.
 
 ## Preservation

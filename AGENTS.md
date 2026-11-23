@@ -1,6 +1,6 @@
 # AGENTS.md — Codex operating instructions
 
-**Read first:** `PROJECT.md`, `PLAN.md`, `MotionMatchingArchitecture.md`, `Unity.md`, `PROGRESS.md`. Refer to original `Report.md` for existing source/scene ownership; it is *not* live Editor evidence.
+**Read first:** `docs/PROJECT.md`, `docs/PLAN.md`, `docs/MotionMatchingArchitecture.md`, `docs/Unity.md`, `docs/PROGRESS.md`. Refer to original `docs/Report.md` for existing source/scene ownership; it is *not* live Editor evidence.
 
 ## Non-negotiable rules
 
@@ -12,7 +12,7 @@
 6. Default work is research, code review and tests; keep new feature schema/version reproducible and all search backends comparable.
 7. Neural stages are future milestones; an MLP projector is not equivalent to Ubisoft's full Learned Motion Matching.
 8. Keep secrets out of repository, workflows and logs; never include proprietary animation assets in a public package.
-9. Before completing a task, update `PROGRESS.md` with evidence and mark `PLAN.md` checkboxes only for validated work.
+9. Before completing a task, update `docs/PROGRESS.md` with evidence and mark `docs/PLAN.md` checkboxes only for validated work.
 
 ## Specialized roles (project-scoped Codex agents)
 

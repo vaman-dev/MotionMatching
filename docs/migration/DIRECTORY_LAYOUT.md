@@ -1,28 +1,56 @@
-# Directory ownership and staged cleanup
+# Directory ownership after consolidation
 
-The migration adds cohesive first-party code beneath `Assets/MotionMatching` while preserving existing source assets, integration scripts and GUIDs. No asset moves or deletions are required for the current stage.
+All project-owned C# has one authoritative root: `Assets/Scripts/MotionMatching/`. Directory placement follows assembly responsibilities and does not introduce a second movement or animation system. Existing source types and Unity GUIDs are preserved.
 
-| Existing path | Current responsibility |
+```text
+Assets/
+  Scripts/MotionMatching/
+    Core/                         # MotionMatching.Core
+    Runtime/                      # MotionMatching.Runtime
+      Input/
+      Character/
+      Motor/
+      States/
+      Animation/
+      LegacyShooter/
+    Editor/                       # MotionMatching.Editor
+    Tests/
+      EditMode/                   # MotionMatching.Tests.Editor
+      PlayMode/                   # MotionMatching.Tests.Runtime
+  Animations/MotionMatching/
+    Source/                       # Retained source packs, original controller/mask
+    UnarmedLocomotion.controller
+  Scenes/                         # Dedicated, original and recovery scenes
+  Prefabs/
+  Material/                       # Existing spelling retained
+  Settings/
+docs/                             # Live project docs and historical Report
+  migration/
+  decisions/
+AGENTS.md
+README.md
+```
+
+| Location | Responsibility / preservation decision |
 |---|---|
-| `Assets/MotionMatching/Core` | Engine-independent frame-local root accumulation; Core assembly. |
-| `Assets/MotionMatching/Runtime` | CharacterMotor and free-camera Look adapter; Runtime references Core, Input System and Cinemachine. |
-| `Assets/MotionMatching/Editor` | Compiled assembly-boundary audit; Editor-only assembly. |
-| `Assets/MotionMatching/Tests/Editor` | Core/imported-assembly tests; Editor test assembly. |
-| `Assets/MotionMatching/Tests/Runtime` | Capsule tests and migration-only legacy motor regression fixtures; Runtime test assembly. |
-| `Assets/MotionMatching/Animation` | Dedicated UnarmedLocomotion controller; no source animation pack relocation. |
-| `Assets/Scripts/Player` | Retained gameplay/input/action/animation integration and original-scene presentation; predefined Assembly-CSharp. |
-| `Assets/Scripts/Player/Animation` | Existing animation packs, original controller and mask; preserve importer metadata and source GUIDs. |
-| `Assets/Scripts/Gun` | Original-scene weapon integration; inactive in MotionMatchingTest. Preserve until deliberate retirement. |
-| `Assets/Editor` | Baseline observation harness in predefined Assembly-CSharp-Editor so it can observe legacy types. |
-| `Assets/Scenes` | Original Test and dedicated MotionMatchingTest; original remains enabled in build settings. |
-| `Assets/Prefabs`, `Material`, `Textures`, `Sounds`, `Settings` | Existing source/presentation/project assets. Retain established names, including `Chracter`. |
-| `Packages`, `ProjectSettings` | Dependency and Unity configuration; preserve existing settings and authorized Pipeline installation. |
-| `docs`, `agents`, `.agents`, `.codex`, `.github`, `tools`, `config` | Research/evidence, agent playbooks/skills/configuration, CI, validation tools and sample research configuration. |
+| `Core` | Engine-independent frame-local root accumulation; future feature/search math only when implemented. |
+| `Runtime/Input`, `Character`, `States` | Existing input lifecycle/free-camera Look adapter, gameplay gravity/guards and authored action states. |
+| `Runtime/Motor` | Sole CharacterController.Move owner; frame-local root handoff. |
+| `Runtime/Animation` | Animator facade, RootMotionRelay and footstep behavior. Relay remains required; it submits root motion without integrating gravity. |
+| `Runtime/LegacyShooter` | Referenced original Test/prefab/recovery-scene compatibility; inactive in MotionMatchingTest. It includes ADS/weapon/interaction/debug dependencies whose removal would leave dangling references or change retained behavior. |
+| `Editor` | Assembly audit and migration capture harness, within the existing Editor-only assembly. |
+| `Tests/EditMode`, `Tests/PlayMode` | Existing tests relocated with their assembly definitions and metadata. |
+| `Assets/Animations/MotionMatching/Source` | Existing animation packs, original controller and mask. Retain all source clips/import settings; filenames do not establish useful research coverage. |
+| `Assets/Animations/MotionMatching/UnarmedLocomotion.controller` | Dedicated one-layer Locomotion/Jump/Dive Roll graph; source assets are referenced, not duplicated. |
+| `Assets/Scenes` | MotionMatchingTest is the dedicated laboratory. Original Test, AR-15 and recovery dependencies remain preserved. Build-scene state must be checked separately. |
+| `docs` | PROJECT, PLAN, PROGRESS, architecture, Unity rules, package ledger and unchanged historical Report. Root README and AGENTS provide discovery. |
+| `agents`, `.agents`, `.codex`, `.github`, `tools`, `config` | Existing playbooks, discoverable skills/agents/workflows, validation and sample research configuration remain at their established paths. |
 
-Generated `Library`, `Logs`, `Temp`, `.vs`, `UserSettings`, and local `.utmp` evidence remain ignored. Existing Git LFS rules continue to own FBX storage. Do not capture packages/vendor content with a broad Assets or Scripts asmdef.
+Runtime references Core, Input System, Cinemachine and Animation Rigging. Editor references Core, Runtime, Input System and Cinemachine and is Editor-only. Tests reference the appropriate production/test assemblies. There is no broad Assets/Scripts assembly, no project code left under Assets/MotionMatching or Assets/Editor, and no Neural assembly. Third-party assets are outside these boundaries.
 
-Final M1 checks preserved the original scene/controller, clips, metadata, LFS rules and Git configuration through an explicit migration allowlist. Evidence remains under `.utmp/m1-final`; the confirmed capture and seven EditMode/six PlayMode results validate the current layout's integration. ProjectSettings.asset and TimeManager.asset were restored to exact M0 bytes after Unity reserialization; pre-restoration copies remain in `settings-before-restoration`. These local artifacts are validation evidence, not distributable source or new package content.
+The script/reference audit and explicit retention decisions are in [CONSOLIDATION_AUDIT.md](CONSOLIDATION_AUDIT.md); assembly details are in [the architecture](../MotionMatchingArchitecture.md). Fresh test evidence belongs in [PROGRESS.md](../PROGRESS.md), separately from historical M1 results.
 
-Future feature extraction/baking, database storage, exact search and KD-tree code should enter the existing Core/Runtime/Editor boundaries according to their engine dependencies. Create focused subdirectories when real implementations need them. Add a separate training environment only when the learned experiment begins; introduce optional neural inference code/assembly at its milestone. No empty Neural, Research, package or feature placeholder directories are needed now.
+The relocation inventory, fresh validation and open preexisting defects are
+recorded in [CONSOLIDATION_REPORT.md](CONSOLIDATION_REPORT.md).
 
-Moving remaining player integrations out of `Assets/Scripts` requires a deliberate dependency split: named assemblies cannot reference Assembly-CSharp. Move only a coherent set, preserve each `.meta`, verify scene/script references and run Unity tests. Removing inactive Gun code, source clips or original-scene assets is a separate cleanup decision with reference/license review; scene detachment alone does not authorize source deletion. Standalone UPM packages remain gated by `ReusablePackages.md`.
+No empty Trajectory, Databases, Neural, Research or package directories are required. Add them when real implementations need them. Generated Library, Logs, Temp, UserSettings and local .utmp evidence remain ignored. Existing Git LFS rules, unrelated dirty files and original asset GUIDs remain protected. Standalone packages require [the publishing gate](../ReusablePackages.md).

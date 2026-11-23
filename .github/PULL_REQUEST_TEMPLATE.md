@@ -24,6 +24,6 @@ Milestone / feature:
 
 ## Docs updated
 
-- [ ] `PROGRESS.md` (if implementation milestone)
-- [ ] `PLAN.md` (only completed gates)
+- [ ] `docs/PROGRESS.md` (if implementation milestone)
+- [ ] `docs/PLAN.md` (only completed gates)
 - [ ] Architecture / Unity / package policy as appropriate
