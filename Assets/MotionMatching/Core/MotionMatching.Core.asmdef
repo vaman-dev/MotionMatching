@@ -1,0 +1,7 @@
+{
+  "name": "MotionMatching.Core",
+  "rootNamespace": "MotionMatching.Core",
+  "references": [],
+  "autoReferenced": true,
+  "noEngineReferences": true
+}

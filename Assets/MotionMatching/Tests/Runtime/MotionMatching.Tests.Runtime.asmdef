@@ -1,0 +1,9 @@
+{
+  "name": "MotionMatching.Tests.Runtime",
+  "rootNamespace": "MotionMatching.Tests.Runtime",
+  "references": ["MotionMatching.Core", "MotionMatching.Runtime", "UnityEngine.TestRunner"],
+  "overrideReferences": true,
+  "precompiledReferences": ["nunit.framework.dll"],
+  "autoReferenced": false,
+  "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}

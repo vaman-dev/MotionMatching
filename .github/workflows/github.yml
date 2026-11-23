@@ -1,0 +1,31 @@
+name: Repository hygiene
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  structure-and-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install YAML parser for workflow syntax checks
+        run: python -m pip install 'PyYAML==6.0.2'
+      - name: Validate scaffold configuration, file links and workflow syntax
+        run: python tools/validate_scaffold.py
+      - name: Validate Unity assembly boundaries statically
+        run: python tools/validate_assemblies.py
+      - name: Run scaffold-only unit tests
+        run: python -m unittest discover -s tools/tests -v
+
+# This workflow does NOT compile Unity, run Unity EditMode/PlayMode tests,
+# bake animation assets, train neural networks or run Sentis inference.
+# Add separately gated Unity CI after a license, platform and real tests exist.
