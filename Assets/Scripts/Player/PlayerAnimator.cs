@@ -60,6 +60,12 @@ public class PlayerAnimator : MonoBehaviour
 
 
     // =========================================================
+    // Aiming
+    // =========================================================
+    [SerializeField] private string isAimingParameter = "isAiming";
+
+
+    // =========================================================
     // RIFLE SPRINT SETTINGS
     // =========================================================
 
@@ -117,6 +123,7 @@ public class PlayerAnimator : MonoBehaviour
     private int isDiveRollingHash;
 
     private int hasRifleHash;
+    private int isAimingHash;
 
 
     // =========================================================
@@ -226,6 +233,14 @@ public class PlayerAnimator : MonoBehaviour
         hasRifleHash =
             Animator.StringToHash(
                 hasRifleParameter
+            );
+
+        // -------------------------
+        //  Aiming
+        // -------------------------
+         isAimingHash =
+        Animator.StringToHash(
+            isAimingParameter
             );
 
 
@@ -460,6 +475,37 @@ public class PlayerAnimator : MonoBehaviour
                 this
             );
         }
+    }
+
+
+    public bool IsAiming
+    {
+        get
+        {
+            if (animator == null)
+                return false;
+
+            return animator.GetBool(
+                isAimingHash
+            );
+        }
+    }
+
+
+
+    // =========================================================
+    // IsAiming
+    // =========================================================
+
+    public void SetAiming(bool value)
+    {
+        if (animator == null)
+            return;
+
+        animator.SetBool(
+            isAimingHash,
+            value
+        );
     }
 
 

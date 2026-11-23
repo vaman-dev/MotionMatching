@@ -1,4 +1,5 @@
 using UnityEngine;
+using MotionMatching.Runtime;
 
 /// <summary>
 /// Handles the core Phase 1 player systems:
@@ -94,6 +95,7 @@ public class PlayerController : MonoBehaviour
     // =========================================================
 
     private CharacterController characterController;
+    private CharacterMotor motor;
     private PlayerStateMachine stateMachine;
 
 
@@ -144,6 +146,8 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController CharacterController => characterController;
 
+    public Vector3 ActualVelocity => motor != null ? motor.ActualVelocity : Vector3.zero;
+
     public Transform CameraTransform => cameraTransform;
 
     public bool IsGrounded => isGrounded;
@@ -152,7 +156,6 @@ public class PlayerController : MonoBehaviour
 
     public float MinDiveRollStateTime => minDiveRollStateTime;
 
-
     // =========================================================
     // INITIALIZATION
     // =========================================================
@@ -160,6 +163,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        motor = new CharacterMotor(characterController);
 
         if (inputReader == null)
         {
@@ -225,6 +229,10 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
+        // Normal Animator evaluation has submitted this frame's root delta.
+        // Vertical simulation must also run when no animation callback arrives.
+        SimulateMotor();
+
         UpdateGroundIgnoreTimer();
 
         RefreshGroundCheck();
@@ -237,6 +245,11 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetGrounded(isGrounded);
         }
+    }
+
+    private void OnDisable()
+    {
+        motor?.ClearPendingRootMotion();
     }
 
 
@@ -501,7 +514,28 @@ public class PlayerController : MonoBehaviour
                 targetRotation,
                 t
             );
-    }   
+    }
+
+
+    // =========================================================
+    // COMBAT / AIM STATE
+    // =========================================================
+
+    public bool IsAiming
+    {
+        get
+        {
+            if (inputReader == null)
+                return false;
+
+            if (playerAnimator == null)
+                return false;
+
+            return
+                playerAnimator.HasRifle &&
+                inputReader.RightMouseHeld;
+        }
+    }
 
     // =========================================================
     // ROOT MOTION CONTROL
@@ -519,7 +553,8 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyRootMotionMovement(Vector3 rootMotionDelta)
     {
-        ApplyGravity();
+        if (!isActiveAndEnabled || characterController == null || !characterController.enabled)
+            return;
 
         // Vertical motion is controlled through our
         // CharacterController gravity/jump system.
@@ -534,6 +569,19 @@ public class PlayerController : MonoBehaviour
             rootMotionDelta.z = 0f;
         }
 
+        motor.SubmitRootMotion(rootMotionDelta);
+    }
+
+    private void SimulateMotor()
+    {
+        if (characterController == null || !characterController.enabled)
+        {
+            motor?.ClearPendingRootMotion();
+            return;
+        }
+
+        ApplyGravity();
+
         Vector3 gravityDelta =
             Vector3.up *
             verticalVelocity *
@@ -543,10 +591,10 @@ public class PlayerController : MonoBehaviour
             jumpForwardVelocity *
             Time.deltaTime;
 
-        characterController.Move(
-            rootMotionDelta +
+        motor.Step(
             jumpForwardDelta +
-            gravityDelta
+            gravityDelta,
+            Time.deltaTime
         );
 
         if (!isGrounded)

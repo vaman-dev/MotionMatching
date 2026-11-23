@@ -1,0 +1,10 @@
+{
+  "name": "MotionMatching.Tests.Editor",
+  "rootNamespace": "MotionMatching.Tests.Editor",
+  "references": ["MotionMatching.Core", "MotionMatching.Runtime", "MotionMatching.Editor", "UnityEngine.TestRunner", "UnityEditor.TestRunner"],
+  "includePlatforms": ["Editor"],
+  "overrideReferences": true,
+  "precompiledReferences": ["nunit.framework.dll"],
+  "autoReferenced": false,
+  "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}
