@@ -2,10 +2,14 @@
 
 ## Scope
 
-The review branch is `feature/motion-matching-m1-pr`, targeting
+The published review branch is `feature/motion-matching-m1-publication`, targeting
 `vaman-dev/MotionMatching`. The destination had no refs at inspection. Its
-`main` base is initialized from the original local baseline commit `13c8484`;
-the existing local `main` branch is preserved.
+`main` base is snapshot commit `e7f01d8`, whose tree is identical to original
+local baseline `13c8484`. Old history contains a 115 MB pre-LFS FBX blob, so
+publication uses a separate root with the existing LFS pointers. Every original
+local branch, including `main` and `feature/motion-matching-m1-pr`, is preserved;
+no force push or local history rewrite was used. Publication commits `b7005f6`
+and `6a255eb` reproduce the two reviewed commit trees with the new parent chain.
 
 Commits separate repository tooling/documentation from the initial motor and
 locomotion migration. The runtime commit includes the existing player input,

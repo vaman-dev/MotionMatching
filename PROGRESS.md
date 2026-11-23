@@ -2,6 +2,8 @@
 
 ## 2026-11-23 — Git publication preparation
 
+- Publication correction: historical Git objects include a 115,014,209-byte FBX exceeding GitHub's limit. Stopped the initial upload before any refs arrived. Created separate snapshot root `e7f01d8` with exactly the `13c8484` tree and existing LFS pointers; replayed reviewed trees as `b7005f6` and `6a255eb` on `feature/motion-matching-m1-publication`. Original local branches/history and dirty files remain preserved. Remote main uses the snapshot root, not the incompatible old history.
+
 - User explicitly authorized branch creation, commits, push and a PR to `https://github.com/vaman-dev/MotionMatching.git`. Added the requested origin and created `feature/motion-matching-m1-pr`; the destination returned no refs. Preserve the existing local main branch and use original baseline `13c8484` as the remote PR base.
 - Narrow Git agent review identified scene dependencies on preexisting untracked character and skybox assets. Exclude these pending redistribution clearance and prepare a draft PR; a clean-checkout scene run is not certified. Details and reviewed commit scope are in `docs/migration/PR_HANDOFF.md`.
 - Fresh precommit Python tests: 20 passed. Assembly/scaffold/M1 preservation validators passed; local TOML/YAML parser skips remain explicit. No Unity tests reran during Git preparation; earlier local Unity evidence remains recorded below.
