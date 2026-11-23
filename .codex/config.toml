@@ -1,0 +1,4 @@
+# Codex CLI project configuration; no model pinned to avoid account/version lock-in.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 4

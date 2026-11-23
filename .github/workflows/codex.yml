@@ -1,0 +1,31 @@
+name: Codex manual read-only audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  codex-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Codex read-only report
+        id: codex
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          permission-profile: ':read-only'
+          prompt-file: '.github/codex-review-prompt.md'
+      - name: Publish report in workflow summary
+        env:
+          REPORT: ${{ steps.codex.outputs.final-message }}
+        run: |
+          printf '%s\n' '## Codex review (read-only)' >> "$GITHUB_STEP_SUMMARY"
+          printf '%s\n' "$REPORT" >> "$GITHUB_STEP_SUMMARY"
+
+# Optional manual review only. Secret OPENAI_API_KEY required.
+# Do not run with elevated repository/write permissions or user PR text injected into prompt.

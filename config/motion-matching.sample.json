@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "locomotion27-v1",
+  "status": "illustrative-only-not-loaded",
+  "sampleRateHz": 60,
+  "trajectoryFutureFrames": [
+    20,
+    40,
+    60
+  ],
+  "coordinateConvention": "Unity character-local X right Y up Z forward; trajectory XZ",
+  "featureDimension": 27,
+  "featureGroups": [
+    {
+      "name": "futurePositionsXZ",
+      "dims": 6,
+      "weight": 1.0
+    },
+    {
+      "name": "futureFacingsXZ",
+      "dims": 6,
+      "weight": 1.0
+    },
+    {
+      "name": "feetPositionsXYZ",
+      "dims": 6,
+      "weight": 1.0
+    },
+    {
+      "name": "feetVelocitiesXYZ",
+      "dims": 6,
+      "weight": 1.0
+    },
+    {
+      "name": "pelvisVelocityXYZ",
+      "dims": 3,
+      "weight": 1.0
+    }
+  ],
+  "normalization": {
+    "method": "mean-standard-deviation",
+    "epsilon": 1e-06
+  },
+  "search": {
+    "backend": "BruteForce",
+    "continuationBias": "tune-after-baseline",
+    "cadenceFrames": "tune-after-tests"
+  }
+}
