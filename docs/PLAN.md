@@ -49,9 +49,19 @@ This organizational milestone precedes M2 and preserves grounded Animator playba
 
 **Exit:** one project-owned source root, preserved GUIDs/working behavior, no dangling references or unexpected predefined-assembly capture, fresh evidence in PROGRESS. No commit, push or PR without explicit approval for this milestone. Next technical work is M2 animation feature extraction/database baking.
 
-The consolidation and focused regression checks are complete. The broader zero-error gate remains open for documented preexisting defects; see [the final report](migration/CONSOLIDATION_REPORT.md). Expanded terrain/contact/player-build coverage also remains unverified. No new dangling project-script references were found.
+Historical C1 result: consolidation and focused regression checks completed with the broader zero-error gate open; see [the C1 report](migration/CONSOLIDATION_REPORT.md). C2 below supersedes the local Console/prefab gate with fresh validation. The historical assertion's cause, expanded terrain/contact/player-build coverage and clean-checkout prerequisites remain unverified.
 
-## M2 — Audit animation input and bake feature database
+## C2 — Final legacy cleanup
+
+- [x] Audit and retire obsolete serialized shooter consumers, preserving local recovery copies.
+- [x] Remove the nine unreferenced compatibility scripts and unused Runtime package reference.
+- [x] Repair/retire broken unused prefabs and select MotionMatchingTest for builds.
+- [x] Run fresh Unity tests, compiled/reference audits, Python checks and locomotion capture; document zero current Console errors/warnings.
+- [ ] Establish an asset-complete clean checkout and target player build; resolve redistribution of local character/skybox prerequisites.
+
+The older Editor assertion did not reproduce; its root cause remains unproven. See [FINAL_CLEANUP_REPORT.md](migration/FINAL_CLEANUP_REPORT.md). No algorithm implementation was introduced.
+
+## M2 — Animation feature extraction and motion database
 
 - [ ] Inventory `.anim` and `.fbx` candidates by actual motion coverage, not filenames.
 - [ ] Author fixed sample rate, local-coordinate and root conventions with golden-case tests.
@@ -59,52 +69,62 @@ The consolidation and focused regression checks are complete. The broader zero-e
 - [ ] Store schema and source hashes with baked data; test round-trip and cross-platform float tolerance.
 - [ ] Add Unity Editor visualization: sampled root path, foot vectors, contact markers and bad frames.
 
-**Exit:** small coherent subset deterministically bakes, reloads and visualizes correctly.
+**Exit:** a representative animation subset deterministically bakes, reloads and visualizes correctly, ready to drive a playable matching controller.
 
-## M3 — V1 exact database-driven matching
+## M3 — KD-tree motion matching: first playable system
 
-- [ ] Desired world velocity + independent facing + damped trajectory predictor.
-- [ ] Search exact eligible feature rows; measure costs and enforce continuation rules.
-- [ ] Play selected clip/frame through Animation Playables with controlled transitions.
-- [ ] Feed one approved delta into capsule motor; reconcile actual displacement.
-- [ ] Author EditMode math tests and PlayMode integration checks; run manually in Editor.
+- [ ] Build trajectory prediction from player intent and collision-resolved motor state.
+- [ ] Implement brute-force nearest-neighbor search as the correctness oracle and benchmark reference.
+- [ ] Implement KD-tree search as the first primary matching backend over the same normalized feature rows and eligibility rules.
+- [ ] Measure KD-tree candidate parity, query time, build time and memory against brute force; define deterministic tie behavior.
+- [ ] Play selected clip/frame through Animation Playables with controlled transitions and root-motion/capsule integration.
+- [ ] Add EditMode and PlayMode coverage for query construction, search, transitions, motor ownership and collisions.
 
-**Exit:** starts, stops, walks, runs, turns, reversals and obstacles work without double root motion.
+**Exit:** a player can move, start, stop, run, turn, reverse and encounter obstacles using matching poses without abrupt snapping or double-applied root motion.
 
-## M4 — V2 KD-tree with measured comparison
+## M4 — Natural locomotion polish
 
-- [ ] Reuse precisely the same normalized feature rows and eligibility policy as V1.
-- [ ] Implement index builder, deterministic candidate policy, and representative benchmark queries.
-- [ ] Test oracle parity, query time distribution, memory, build time across multiple dataset sizes.
-- [ ] Keep brute force as fallback if KD-tree does not improve real workloads.
+- [ ] Improve starts/stops, acceleration/deceleration, turning, pivots, reversals and responsive directional changes.
+- [ ] Inspect pose continuity and planted-foot sliding in representative gameplay scenarios; add foot locking only when evidence warrants it.
+- [ ] Verify wall and terrain collision behavior and root-motion reconciliation.
+- [ ] Add a visual matching/trajectory diagnostic suitable for iteration and demonstration.
+- [ ] Record repeatable quality and performance measurements for the classical controller.
 
-**Exit:** performance report including when KD-tree wins, loses, or returns different results.
+**Exit:** the classical controller is a credible playable locomotion system, with its quality and known limits demonstrated in the project scene.
 
-## M5 — V3 neural teacher/student experiment
+## M5 — MLP/ANN matching experiment
 
 - [ ] Define precise prediction target (feature/latent, not arbitrary frame ID).
 - [ ] Export labeled train/val/test queries; split by source sequences to avoid temporal leakage.
 - [ ] Train MLP with documented architecture, seeds, normalization and metrics.
-- [ ] Benchmark quality **against** exact search on unseen trajectories and actions.
+- [ ] Benchmark quality **against** the classical KD-tree controller on unseen trajectories and actions.
 
-**Exit:** reproducible training and independently evaluated model with declared limitations.
+**Exit:** reproducible training and an independently evaluated neural matching experiment, compared with the classical controller on the same data and gameplay scenarios.
 
-## M6 — V4 Unity Sentis integration
+## M6 — Unity Sentis/Inference Engine integration
 
 - [ ] Install a tested `com.unity.ai.inference` version compatible with this Editor.
 - [ ] Export supported ONNX; verify model/operator and shape compatibility.
 - [ ] Compare Unity inference outputs with Python for a fixed golden fixture.
-- [ ] Profile CPU/GPU behavior and memory/tensor lifecycle; fallback to V1/V2 on failure.
+- [ ] Profile CPU/GPU behavior and memory/tensor lifecycle; fall back to the classical KD-tree controller on failure.
 
-**Exit:** repeatable numerical parity and gameplay tests; device benchmarks.
+**Exit:** repeatable numerical parity, gameplay comparison, performance and memory measurements, and a reliable classical fallback.
 
-## M7 — V5 optional full learned motion matching
+## M7 — Portfolio demo
 
-- [ ] Study and independently reproduce Projector, Stepper, Compressor/Decompressor components.
-- [ ] Confirm pose reconstruction and temporal stability with contacts/IK.
-- [ ] Quantify quality, memory, and performance, not just lower search milliseconds.
+- [ ] Deliver a polished playable build and clearly documented controls/setup.
+- [ ] Provide a motion visualizer and comparable classical/neural modes where available.
+- [ ] Capture a comparison video and publish reproducible benchmarks and limitations.
+- [ ] Review project presentation, scene startup, visual quality and documentation as a portfolio handoff.
 
-**Exit:** research report and comparison against V1/V2/V3/V4.
+**Exit:** a reviewer can run and play the demo, see the movement quality, inspect useful diagnostics and understand the engineering tradeoffs from the included documentation.
+
+## Optional follow-up — fuller learned motion matching
+
+- [ ] If useful to the portfolio goals, study and implement learned Projector, Stepper and pose compression/decompression components.
+- [ ] Validate pose reconstruction, temporal stability, locomotion quality, memory and performance against the existing classical and MLP modes.
+
+This optional work does not replace the playable classical and portfolio milestones.
 
 ## Publishing gate
 

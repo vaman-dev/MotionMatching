@@ -144,3 +144,8 @@ remain preserved. No database, brute-force/KD search or neural functionality was
 The next technical milestone remains animation feature extraction and database
 baking after review/merge and acknowledgment or resolution of the open validation
 limits. No commit or publication is authorized by this report.
+
+
+## Follow-up C2 — 2026-11-24
+
+The original C1 results above remain historical evidence. Subsequent authorized cleanup retired the shooter consumers and nine compatibility scripts, repaired the Ren prefab, and changed the sole build scene to MotionMatchingTest. Fresh 7/6 Unity and 31 Python passes, all 16 capture comparisons and a zero-error/zero-warning retained-asset Console audit are documented in [FINAL_CLEANUP_REPORT.md](FINAL_CLEANUP_REPORT.md). The old assertion did not recur; clean-checkout publication prerequisites and player-build limits remain open.

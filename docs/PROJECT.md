@@ -1,27 +1,27 @@
-# PROJECT — Motion Matching and Learned Animation
+# PROJECT — Motion Matching: Intelligent Character Locomotion
+
+**Cleanup update (2026-11-24):** The original Test scene, rifle prefab, broken Ch15 variant, stale recovery scenes and nine LegacyShooter scripts have been retired. MotionMatchingTest is the sole enabled build scene; Runtime references Core, Input System and Cinemachine. Earlier preservation/legacy-retention statements below describe the M1/C1 baseline. Fresh cleanup validation and remaining publication limits are in [FINAL_CLEANUP_REPORT.md](migration/FINAL_CLEANUP_REPORT.md).
+
 
 ## Vision
 
-Create a professional **research and engineering** implementation of third-person character locomotion in Unity: first database-driven motion matching, then search acceleration, then a reproducible learned approximation with ONNX inference through Unity Sentis.
+Build a portfolio-grade, fully playable third-person character controller in Unity whose grounded locomotion is driven by motion matching instead of traditional Animator Blend Trees. The project develops practical gameplay and animation engineering experience and demonstrates natural, responsive movement.
 
-The project is intentionally a single-character locomotion laboratory, **not** a shooter and not an all-purpose animation framework on day one.
+Research papers and implementations, including Ubisoft's work, are technical references that inform implementation decisions. Reproducing a paper is not the deliverable; the playable character is.
 
 ## Scope
 
-**In:** camera-relative intent; desired velocity and facing; root/joint data extraction; feature normalization; pose and trajectory search; Playables playback; inertial or otherwise measured transition quality; collision-aware character motor; diagnostic visualization; benchmarking; eventual ANN experiments and runtime inference.
+**In:** camera-relative intent; desired velocity and facing; root/joint feature extraction; a reusable animation database; KD-tree-based classical motion matching; a brute-force correctness and benchmark reference; trajectory prediction; Playables playback; smooth transitions; root-motion and collision integration; locomotion polish; diagnostics; comparative benchmarks; later MLP/ANN experiments and Unity Sentis inference.
 
-**Deferred:** jump/dive-roll matching (initially authored actions), motion warping, contacts/foot locking, terrain adaptation, neural stepping and decompression, generic editor tooling.
+**Deferred:** jump/dive-roll matching (initially authored actions), motion warping, foot locking, terrain adaptation and full learned stepping/decompression. These may follow the core playable matching system where they improve the demo.
 
 **Out:** weapon pickup, firing, rifle ADS, equipment masks, multiplayer, damage and UI inventory. Remove these only after verifying that their serialized dependencies have been detached.
 
-## Engineering objectives
+## Success criteria
 
-1. Correct results before speed; use brute force as reference oracle.
-2. A portable, versioned animation dataset and feature schema shared by all backends.
-3. A single movement/rotation owner per phase; preserve collision and vertical simulation.
-4. Tests for math and storage, Unity EditMode tests for sampling, PlayMode checks for motor/animation.
-5. Benchmarks recorded with dataset hash, feature version, platform and warm-up conditions.
-6. No claims of neural superiority without quality/speed/memory evidence.
+The character should show smooth starts and stops, believable acceleration and deceleration, natural turns and pivots, responsive 90°/180° directional changes, continuous poses, minimal planted-foot sliding, and reliable wall/terrain collision. Evaluate both classical and neural modes using the same motion data and gameplay scenarios. Record matching/inference cost, frame performance and memory alongside observed locomotion quality. Algorithms must be correct and maintainable, but algorithm completion alone does not satisfy the project goal.
+
+Engineering foundations remain: a portable, versioned feature database; a single movement/rotation owner per phase; collision-aware motor behavior; useful tests; reproducible benchmarks; and no claims of neural superiority without comparable quality, speed and memory evidence.
 
 ## Target environment
 
@@ -46,12 +46,8 @@ Exact artifacts and limits belong in `PROGRESS.md` and the assessment. Slopes, l
 
 Current folder ownership is documented in [DIRECTORY_LAYOUT.md](migration/DIRECTORY_LAYOUT.md). All project-owned scripts now have one source root; existing source animations move with their metadata to `Assets/Animations/MotionMatching/Source`. The historical Report is preserved byte-for-byte under docs; its relative links and old paths describe its original snapshot. Consolidation test results are recorded separately from the M1 baseline in PROGRESS.
 
-## Definition of done
+## Current state and next milestone
 
-The C1 source consolidation has fresh 7 EditMode / 6 PlayMode / 31 Python passes
-and a passing 1,141-frame input regression capture. All three scenes and the rifle
-prefab resolve the moved scripts. Three current Console entries and two unused
-prefab defects remain documented preexisting limits; this is not a project-wide
-zero-error certification. See [the consolidation report](migration/CONSOLIDATION_REPORT.md).
+Foundation, directory consolidation and local legacy cleanup are implemented. Fresh C2 evidence includes 7 EditMode tests, 6 PlayMode tests, 31 Python tests, a passing 1,141-frame regression capture, and a retained-asset audit with zero current Console errors/warnings; see [PROGRESS.md](PROGRESS.md) and the [cleanup report](migration/FINAL_CLEANUP_REPORT.md). The broken unused prefabs were repaired or retired. The old Editor assertion did not reproduce, but its root cause remains unknown. Grounded playback still uses Animator; matching is not yet implemented. Clean-checkout asset prerequisites, terrain/contact coverage and a target player build remain open.
 
-Brute force and KD-tree produce the same best eligible candidate (within explicit tie rules); animation playback doesn't double-apply root motion; locomotion and collision cases pass; benchmarks are reproducible; later neural mode has an explicit reference baseline and graceful classical fallback.
+The next milestone is animation feature extraction and deterministic database baking. After that, KD-tree is the first primary matching backend; brute force remains its correctness oracle and benchmark reference. The final success criterion is a playable portfolio demo whose movement quality is immediately visible, with the database, algorithms and performance evidence supporting that result.

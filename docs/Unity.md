@@ -1,5 +1,8 @@
 # Unity.md — Unity engineering rules
 
+**Cleanup update (2026-11-24):** The original Test scene, rifle prefab, broken Ch15 variant, stale recovery scenes and nine LegacyShooter scripts have been retired. MotionMatchingTest is the sole enabled build scene; Runtime references Core, Input System and Cinemachine. Earlier preservation/legacy-retention statements below describe the M1/C1 baseline. Fresh cleanup validation and remaining publication limits are in [FINAL_CLEANUP_REPORT.md](migration/FINAL_CLEANUP_REPORT.md).
+
+
 Scope: Unity `6000.6.0f1` project migrated from `TPS_Shooter`. Enforce these rules in code reviews, tests and agent prompts.
 
 ## Architecture
