@@ -1,5 +1,22 @@
 # PROGRESS — factual implementation log
 
+## 2026-11-24 | C2 | final legacy cleanup and publication preparation
+
+- **Changes:** retired obsolete Test/rifle/broken Ch15/recovery assets and nine LegacyShooter scripts; repaired two missing Ren components; removed Runtime Rigging reference; MotionMatchingTest is the only enabled build scene. Original edited files/metas are preserved in ignored local archives.
+- **Fresh execution:** Unity recompile reports up-to-date/failed=false; 7 EditMode and 6 PlayMode tests passed. All 31 Python fixtures and assembly/scaffold checks passed (local parser skips explicit). Compiled boundaries and retained prefabs/scene pass the audit. Capture: 1,141 frames, all 16 comparisons passed. Final Console: 0 errors, 0 warnings after preserving history and rerunning the asset audit. Historical Editor assertion did not reproduce; no speculative fix applied.
+- **New defect:** user-created untracked recovery 0 (1) referenced a missing NativeCube prefab. Preserved exact bytes/meta outside Assets before retiring it; final retained asset audit emitted no errors.
+- **Scope/limits:** newer user scene/terrain/material/settings/animation/skill changes excluded. Local character FBX/skybox remain untracked publication prerequisites. No clean-checkout Unity run, target build or full terrain/contact matrix. Gameplay facade's inactive rifle members remain unchanged.
+- **Publication:** owner authorized a scoped commit and GitHub push. Branch cleanup/retire-legacy-shooter starts at merged main 3fb7e7b. Complete inventory, commands and proposed PR description are in migration/FINAL_CLEANUP_REPORT.md and migration/CLEANUP_PR_DESCRIPTION.md. No PR creation or merge is part of this request.
+
+
+## 2026-11-23 | Project direction | portfolio locomotion objective
+
+- **Change / files:** clarified `docs/PROJECT.md`, `docs/PLAN.md` and `docs/MotionMatchingArchitecture.md`: this is a portfolio-grade playable Unity locomotion project, not primarily an academic research project. Research remains an implementation reference. The success criteria now describe responsive, continuous starts/stops, acceleration, turns and pivots, directional changes, low foot sliding, collision behavior and measured performance.
+- **Roadmap:** M2 remains animation feature extraction/database baking. M3 now makes KD-tree the first primary matching backend and retains brute force as its correctness/benchmark reference. M4 focuses on natural locomotion polish; M5 MLP/ANN matching; M6 Unity Sentis/Inference Engine; M7 a playable portfolio demo. Fuller learned Projector/Stepper/compression work is optional follow-up.
+- **Implementation/evidence:** documentation-only update. No gameplay code, Unity assets, settings, scenes, test results or milestone completion status changed. Existing C1/M1 evidence and known limits remain as previously recorded.
+- **Validation:** reviewed the four requested documents and the documentation agent/skill guidance; inspected the scoped diff for consistency. No test suite or Unity run was requested or run for this prose-only change.
+- **Working tree:** unrelated preexisting asset, scene, package/settings, and skill-file changes were present and left untouched. No commit, push or PR action was performed.
+
 ## 2026-11-23 | C1 | publication authorized
 
 - **Published:** commit `29ba0e1` pushed to `origin/refactor/consolidate-motion-matching`; draft [PR #2](https://github.com/vaman-dev/MotionMatching/pull/2) verified OPEN against main. The description includes scope, workflow deletion, exact staged validation, prior full-local-tree Unity results and unresolved clean-checkout/asset gates. GitHub MCP returned integration permission error 403; the authenticated GitHub CLI created the PR instead. No merge performed.

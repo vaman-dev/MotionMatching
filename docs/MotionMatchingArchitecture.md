@@ -1,6 +1,11 @@
 # Motion Matching Architecture
 
-**Status:** the motor boundary and five assemblies are implemented and covered by Unity tests. Feature extraction, search, matching playback and neural stages below remain proposed. Historical architecture is in `Report.md`.
+**Cleanup update (2026-11-24):** The original Test scene, rifle prefab, broken Ch15 variant, stale recovery scenes and nine LegacyShooter scripts have been retired. MotionMatchingTest is the sole enabled build scene; Runtime references Core, Input System and Cinemachine. Earlier preservation/legacy-retention statements below describe the M1/C1 baseline. Fresh cleanup validation and remaining publication limits are in [FINAL_CLEANUP_REPORT.md](migration/FINAL_CLEANUP_REPORT.md).
+
+
+**Project goal:** a portfolio-grade, fully playable third-person character whose grounded locomotion uses motion matching. Papers and external implementations inform engineering choices; the deliverable is movement that feels and looks natural in play. Judge the system by responsiveness, starts/stops, acceleration, turns and pivots, pose continuity, minimal foot sliding, collision behavior, and measured runtime cost.
+
+**Status:** the motor boundary and five assemblies are implemented and covered by Unity tests. Feature extraction, search and matching playback remain proposed. The next milestone is the animation feature database; KD-tree is the first primary matching backend, with brute force retained as its correctness and benchmarking reference. Historical architecture is in `Report.md`.
 
 Current source/scene evidence and the staged migration plan are in `migration/REPOSITORY_ASSESSMENT.md`. Gravity now advances without root callbacks. MotionMatchingTest has been detached from shooter/ADS systems and uses a dedicated unarmed controller, with passing post-detachment Unity tests and confirmed action/camera capture. Grounded playback and authored actions still use the legacy Animator approach.
 
@@ -110,15 +115,17 @@ This is the paper's **locomotion example**, not a universal contract. Gait can b
 
 ## 4. Search backends
 
-**V1 brute force**: iterate eligible frames, evaluate weighted normalized squared distance, apply continuation/switch logic, deterministic tie break by frame index. Keep as correctness reference. Implement memory-contiguous feature storage and profile it before optimizing.
+**Correctness reference — brute force**: iterate eligible frames, evaluate weighted normalized squared distance, apply continuation/switch logic, and break ties deterministically by frame index. Keep this implementation small and trustworthy so every optimized backend can be checked against it.
 
-**V2 KD-tree**: index a feature space compatible with the cost metric. Applying different weights at query time invalidates a static index unless built to support them; rebuild or transform features consistently. Filters/tags may require per-group indices or candidate validation. In 27D, don't assume KD-tree is faster: compare exact candidate results, p50/p95 search time, build time, RAM and dataset size.
+**First primary backend — KD-tree**: index a feature space compatible with the cost metric. Applying different weights at query time invalidates a static index unless built to support them; rebuild or transform features consistently. Filters/tags may require per-group indices or candidate validation. In 27D, don't assume KD-tree is faster: compare candidate results, p50/p95 search time, build time, RAM and dataset size against the brute-force reference. Measure accuracy and performance rather than assuming either.
 
-**V3 MLP projector experiment**: train supervised `(query -> target feature/latent)` using brute-force teacher targets. Do **not** regress raw frame indices as if adjacent IDs mean similar motion. If the network predicts a feature vector, define how it maps to a playable frame, e.g. nearest feasible database candidate; this **still uses a database**. Record top-1 agreement, feature-distance error, trajectory quality and runtime.
+**Later MLP/ANN experiment**: define the prediction target before training, such as a matching feature representation or candidate selection, and compare with the classical system. Do **not** regress raw frame indices as if adjacent IDs mean similar motion. If the network predicts a feature vector, define how it maps to a playable frame, e.g. nearest feasible database candidate; this **still uses a database**. Record agreement, feature-distance error, gameplay motion quality and runtime.
 
-**V4 Sentis**: export ONNX plus normalization schema/version and expected tensor shapes. Validate output parity with Python, runtime backends, model lifetime and tensor disposal. Preserve a classical fallback. The inference package is `com.unity.ai.inference`, documented APIs in recent 2.6 versions use `Unity.InferenceEngine`.
+**Unity Sentis/Inference Engine**: export ONNX plus normalization schema/version and expected tensor shapes. Validate output parity with Python, runtime backends, model lifetime and tensor disposal. Preserve the classical fallback. The inference package is `com.unity.ai.inference`, documented APIs in recent 2.6 versions use `Unity.InferenceEngine`.
 
-**V5 learned motion matching**: optionally implement learned **Projector + Stepper + Compressor/Decompressor** more closely following the paper. A projector-only MLP is a research stepping stone, **not** full Learned Motion Matching.
+**Optional fuller learned system**: learned Projector + Stepper + Compressor/Decompressor components may be explored after the playable classical system and portfolio demo goals are met. A projector-only MLP is not full Learned Motion Matching, and implementing the full paper is not required for project success.
+
+**Gameplay evaluation:** run both matching modes on the same animation database and input scenarios. Record perceived responsiveness and transition continuity alongside 90°/180° changes, starts/stops, contact sliding, collision behavior, frame-time distribution and memory. A correct search result alone does not establish successful locomotion.
 
 ## 5. Transition and movement details
 

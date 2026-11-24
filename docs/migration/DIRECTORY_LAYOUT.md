@@ -12,7 +12,6 @@ Assets/
       Motor/
       States/
       Animation/
-      LegacyShooter/
     Editor/                       # MotionMatching.Editor
     Tests/
       EditMode/                   # MotionMatching.Tests.Editor
@@ -20,7 +19,7 @@ Assets/
   Animations/MotionMatching/
     Source/                       # Retained source packs, original controller/mask
     UnarmedLocomotion.controller
-  Scenes/                         # Dedicated, original and recovery scenes
+  Scenes/                         # MotionMatchingTest only
   Prefabs/
   Material/                       # Existing spelling retained
   Settings/
@@ -54,3 +53,6 @@ The relocation inventory, fresh validation and open preexisting defects are
 recorded in [CONSOLIDATION_REPORT.md](CONSOLIDATION_REPORT.md).
 
 No empty Trajectory, Databases, Neural, Research or package directories are required. Add them when real implementations need them. Generated Library, Logs, Temp, UserSettings and local .utmp evidence remain ignored. Existing Git LFS rules, unrelated dirty files and original asset GUIDs remain protected. Standalone packages require [the publishing gate](../ReusablePackages.md).
+
+
+C2 update: Runtime/LegacyShooter and its serialized consumers have been retired; Runtime no longer references Animation Rigging. Earlier table entries describe the C1 retention decision. See FINAL_CLEANUP_REPORT.md for the current inventory.
