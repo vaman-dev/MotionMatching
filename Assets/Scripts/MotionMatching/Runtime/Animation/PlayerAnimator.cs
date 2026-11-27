@@ -1,4 +1,6 @@
 using UnityEngine;
+using MotionMatching.Runtime;
+using UnityEngine.Playables;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
@@ -141,6 +143,19 @@ public class PlayerAnimator : MonoBehaviour
 
     public Animator UnityAnimator => animator;
 
+    private MotionPlayablePlayer motionPlayback;
+    public void BindMotionPlayback(MotionPlayablePlayer playback) => motionPlayback = playback;
+    private bool HasPlayableController => motionPlayback != null && motionPlayback.Controller.IsValid();
+    public float ReadFloat(int hash) => HasPlayableController ? motionPlayback.Controller.GetFloat(hash) : animator.GetFloat(hash);
+    public AnimatorStateInfo ReadState(int layer) => HasPlayableController ? motionPlayback.Controller.GetCurrentAnimatorStateInfo(layer) : animator.GetCurrentAnimatorStateInfo(layer);
+    public AnimatorStateInfo ReadNextState(int layer) => HasPlayableController ? motionPlayback.Controller.GetNextAnimatorStateInfo(layer) : animator.GetNextAnimatorStateInfo(layer);
+    public bool IsTransitioning(int layer) => HasPlayableController ? motionPlayback.Controller.IsInTransition(layer) : animator.IsInTransition(layer);
+    private bool ReadBool(int hash) => HasPlayableController ? motionPlayback.Controller.GetBool(hash) : animator.GetBool(hash);
+    private void WriteFloat(int hash, float value) { if (HasPlayableController) motionPlayback.Controller.SetFloat(hash, value); else animator.SetFloat(hash, value); }
+    private void WriteBool(int hash, bool value) { if (HasPlayableController) motionPlayback.Controller.SetBool(hash, value); else animator.SetBool(hash, value); }
+    private void WriteTrigger(int hash) { if (HasPlayableController) motionPlayback.Controller.SetTrigger(hash); else animator.SetTrigger(hash); }
+    private void ClearTrigger(int hash) { if (HasPlayableController) motionPlayback.Controller.ResetTrigger(hash); else animator.ResetTrigger(hash); }
+
 
     public bool HasRifle
     {
@@ -149,7 +164,7 @@ public class PlayerAnimator : MonoBehaviour
             if (animator == null)
                 return false;
 
-            return animator.GetBool(hasRifleHash);
+            return ReadBool(hasRifleHash);
         }
     }
 
@@ -419,31 +434,31 @@ public class PlayerAnimator : MonoBehaviour
         // SEND VALUES TO ANIMATOR
         // -----------------------------------------------------
 
-        animator.SetFloat(
+        WriteFloat(
             moveXHash,
             currentMoveX
         );
 
 
-        animator.SetFloat(
+        WriteFloat(
             moveZHash,
             currentMoveZ
         );
 
 
-        animator.SetFloat(
+        WriteFloat(
             speedHash,
             currentSpeed
         );
 
 
-        animator.SetBool(
+        WriteBool(
             isMovingHash,
             isMoving
         );
 
 
-        animator.SetBool(
+        WriteBool(
             isSprintingHash,
             effectiveSprint
         );
@@ -462,7 +477,7 @@ public class PlayerAnimator : MonoBehaviour
             return;
 
 
-        animator.SetBool(
+        WriteBool(
             hasRifleHash,
             value
         );
@@ -485,7 +500,7 @@ public class PlayerAnimator : MonoBehaviour
             if (animator == null)
                 return false;
 
-            return animator.GetBool(
+            return ReadBool(
                 isAimingHash
             );
         }
@@ -502,7 +517,7 @@ public class PlayerAnimator : MonoBehaviour
         if (animator == null)
             return;
 
-        animator.SetBool(
+        WriteBool(
             isAimingHash,
             value
         );
@@ -519,12 +534,12 @@ public class PlayerAnimator : MonoBehaviour
             return;
 
 
-        animator.ResetTrigger(
+        ClearTrigger(
             diveRollHash
         );
 
 
-        animator.SetTrigger(
+        WriteTrigger(
             jumpHash
         );
     }
@@ -538,7 +553,7 @@ public class PlayerAnimator : MonoBehaviour
             return;
 
 
-        animator.SetBool(
+        WriteBool(
             isGroundedHash,
             isGrounded
         );
@@ -555,12 +570,12 @@ public class PlayerAnimator : MonoBehaviour
             return;
 
 
-        animator.ResetTrigger(
+        ClearTrigger(
             jumpHash
         );
 
 
-        animator.SetTrigger(
+        WriteTrigger(
             diveRollHash
         );
     }
@@ -574,7 +589,7 @@ public class PlayerAnimator : MonoBehaviour
             return;
 
 
-        animator.SetBool(
+        WriteBool(
             isDiveRollingHash,
             isDiveRolling
         );
@@ -601,31 +616,31 @@ public class PlayerAnimator : MonoBehaviour
             idleSpeedValue;
 
 
-        animator.SetFloat(
+        WriteFloat(
             moveXHash,
             0f
         );
 
 
-        animator.SetFloat(
+        WriteFloat(
             moveZHash,
             0f
         );
 
 
-        animator.SetFloat(
+        WriteFloat(
             speedHash,
             idleSpeedValue
         );
 
 
-        animator.SetBool(
+        WriteBool(
             isMovingHash,
             false
         );
 
 
-        animator.SetBool(
+        WriteBool(
             isSprintingHash,
             false
         );

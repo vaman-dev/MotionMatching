@@ -1,12 +1,16 @@
-# Motion Matching Research
+# Motion Matching — Intelligent Character Locomotion
 
-**Status:** Directory consolidation is implemented: all project C# lives under `Assets/Scripts/MotionMatching`, with five named assemblies; animations are outside Scripts and project documents are under docs. Fresh checks passed seven Unity EditMode, six PlayMode and 31 Python tests, plus the input regression capture. The project-wide zero-error gate remains open for preexisting Editor/prefab defects documented in [the consolidation report](docs/migration/CONSOLIDATION_REPORT.md). Grounded Animator playback and the single motor remain; database/search/neural stages are not implemented.
+Portfolio-grade Unity character locomotion. The local workspace has an M2 database baker and an experimental M3C KD-tree/Playables locomotion integration. CharacterMotor still owns capsule movement and the Animator component receives the single Playables output. Polished movement and full regression acceptance remain open. Start with [current status](docs/STATUS.md) for evidence and open gates.
 
-The scaffold is now integrated with the existing `TPS_Shooter` repository. `docs/Report.md` remains the historical architecture snapshot. Current source/settings evidence and the concrete migration plan are in [the repository assessment](docs/migration/REPOSITORY_ASSESSMENT.md).
+All project-owned C# lives under `Assets/Scripts/MotionMatching` in five assemblies; animations live outside Scripts. Open **Tools > Motion Matching > Motion Database Baker** to bake or inspect the initial locomotion database. See the [M2 report](docs/migration/M2_IMPLEMENTATION_REPORT.md) for setup and limitations, including local model/Avatar prerequisites.
+
+This public code branch does not publish the locally imported Kevin Iglesias animation pack, baked pose databases, or the local scene's references to them. Import licensed source animations into your own Unity project and bake a compatible database before enabling the experimental matching component. The checked-in scene remains the grounded migration baseline; local M3C test results in the documentation are not a clean-checkout acceptance claim.
 
 ## Operating model
 
-1. `docs/PROJECT.md` — purpose and scope.
+Read only what the task needs; this list is a map, not a startup checklist.
+
+1. `docs/STATUS.md` — compact current state; `docs/PROJECT.md` — purpose and scope.
 2. `docs/PLAN.md` and `docs/PROGRESS.md` — ordered milestones and factual evidence.
 3. `docs/MotionMatchingArchitecture.md` — system/data contracts and search backends.
 4. `docs/Unity.md` — coding and serialized-asset rules.
@@ -17,9 +21,9 @@ The scaffold is now integrated with the existing `TPS_Shooter` repository. `docs
 ## Development and preservation
 
 - `tools/Preserve-Worktree.ps1` captures tracked and nonignored untracked source files, metadata and recorded deletions into a verified ZIP/SHA256 manifest under a new ignored workspace destination. It excludes ignored caches, local credentials, Git configuration/index and history; retain the existing Git object database. Keep local backups secure and unpublished.
-- Consolidation branch: `refactor/consolidate-motion-matching`, created from updated origin/main after PR #1 merged. Existing user changes remain preserved; publication requires explicit owner authorization, recorded in `docs/PROGRESS.md`.
-- The original `Assets/Scenes/Test.unity` remains the enabled build scene, with its original scene/controller bytes preserved. `Assets/Scenes/MotionMatchingTest.unity` is the dedicated unarmed scene: weapon, table, nearby pickup detection, ADS and weapon constraints are detached. Preserve all source animation assets.
-- Do not delete rifle scripts or Animator assets as the first operation. Remove serialized component references and dependencies in a scene clone, then delete obsolete assets in separate, reviewable commits.
+- Inspect live branch/status before editing; preserve unrelated changes and require explicit publication authorization.
+- `Assets/Scenes/MotionMatchingTest.unity` is the sole enabled build scene. C2 retired the obsolete Test scene, rifle prefabs and nine LegacyShooter compatibility scripts after auditing references. Preserve retained character and source animation assets.
+- Source removal requires a dependency audit and task authorization; keep GUID-bearing metadata with retained assets.
 - On Windows use `powershell -NoProfile -ExecutionPolicy Bypass -File tools/mm.ps1 doctor`, then `validate` and `test`. The helper selects a usable Python 3.10+ interpreter. Python 3.11+ enables built-in TOML parsing; PyYAML enables workflow parsing. Missing parsers are explicitly skipped locally; CI uses Python 3.12 and pinned PyYAML.
 - `py -3 -B tools/validate_migration.py --mode consolidation --baseline .utmp/consolidation-start/manifest.json --move-map docs/migration/consolidation-moves.json` checks the current relocation against the preservation snapshot and recorded source/destination map. Historical M0/M1 modes remain for their original layouts. `tools/validate_assemblies.py` checks the five assembly boundaries. These Python checks do not compile Unity.
 - The Editor-only `MigrationBaselineCapture.RunBatch` observes the retained player through synthetic Input System events in a dedicated batch session. See [the baseline record](docs/migration/BASELINE.md) for invocation and evidence limits. It never saves scenes.
@@ -29,7 +33,7 @@ The scaffold is now integrated with the existing `TPS_Shooter` repository. `docs
 - Actual configuration: Editor `6000.6.0f1`, URP `17.6.0`, Input System `1.20.0`, Cinemachine `6.6.0`, Animation Rigging `6.6.0`, CharacterController and Humanoid avatar.
 - PlayerController schedules gravity/carry in LateUpdate; CharacterMotor owns the sole capsule Move call. RootMotionRelay supplies frame-local horizontal animation deltas. Current scheduling supports normal Animator evaluation.
 - Existing report lists 31 `.anim` and 109 `.fbx` assets; this is not proof of usable locomotion coverage.
-- Desired future path: exact brute-force → KD-tree comparison → MLP-based learned projector → Sentis ONNX inference → optional learned stepping/decompression.
+- Trajectory prediction and primary KD-tree matching with a brute-force correctness reference are implemented locally. Next are natural locomotion polish and asset-complete validation; MLP matching, Unity neural inference and the portfolio demo follow later.
 
 ## Source references
 
@@ -42,6 +46,4 @@ The scaffold is now integrated with the existing `TPS_Shooter` repository. `docs
 
 ## Current milestone
 
-Directory consolidation C1 puts all project-owned C# under `Assets/Scripts/MotionMatching`, within the existing five assemblies, and centralizes project documentation under docs. Animation source assets live under `Assets/Animations/MotionMatching/Source`. Referenced original-scene shooter compatibility remains under Runtime/LegacyShooter; MotionMatchingTest stays unarmed. Fresh validation is recorded separately from the M1 baseline in [PROGRESS](docs/PROGRESS.md).
-
-After consolidation is validated and merged, M2 audits animation data and introduces reproducible feature extraction/database baking. The five implemented assembly boundaries are documented in `docs/MotionMatchingArchitecture.md`; folder ownership is in [the directory guide](docs/migration/DIRECTORY_LAYOUT.md). Keep grounded Animator playback until the expanded locomotion matrix passes before M3 replacement. No Neural assembly or placeholder UPM packages now. See `docs/PLAN.md` for the hard exit gates.
+M2's local functional gate is validated; M3C matching is experimental and has unresolved transition and action-regression gates. [STATUS](docs/STATUS.md) summarizes the current facts; [PLAN](docs/PLAN.md) owns exit gates and [PROGRESS](docs/PROGRESS.md) retains dated evidence. No Neural assembly or placeholder packages exist. Historical shooter architecture remains archived as documentation, not live instructions.

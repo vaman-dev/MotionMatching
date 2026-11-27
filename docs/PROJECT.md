@@ -30,7 +30,7 @@ Engineering foundations remain: a portable, versioned feature database; a single
 - Neural inference is a later milestone: verify `com.unity.ai.inference` compatibility when M6 begins. It is currently absent; do **not** edit the manifest automatically.
 - Training: Python + framework of choice in a **separate** `Research/` environment (not installed into Unity); export a compatible ONNX model after operator validation.
 
-## Source evidence and limitations
+## Historical source evidence and limitations (M1/C1)
 
 `Report.md` is a historical architecture snapshot. Reinspection confirmed its 19 legacy first-party scripts, including `PlayerController`, `PlayerInputReader`, `PlayerAnimator`, `RootMotionRelay` and authored Jump/DiveRoll states. Its recorded HEAD was baseline commit `13c8484`, which omitted substantial existing working-tree changes. PR #1 subsequently merged as `efad2d3`; consolidation starts from updated origin/main while preserving the dirty local tree. Current findings and the implementation sequence are in `migration/REPOSITORY_ASSESSMENT.md`; actual execution evidence belongs in `PROGRESS.md`.
 
@@ -48,6 +48,8 @@ Current folder ownership is documented in [DIRECTORY_LAYOUT.md](migration/DIRECT
 
 ## Current state and next milestone
 
-Foundation, directory consolidation and local legacy cleanup are implemented. Fresh C2 evidence includes 7 EditMode tests, 6 PlayMode tests, 31 Python tests, a passing 1,141-frame regression capture, and a retained-asset audit with zero current Console errors/warnings; see [PROGRESS.md](PROGRESS.md) and the [cleanup report](migration/FINAL_CLEANUP_REPORT.md). The broken unused prefabs were repaired or retired. The old Editor assertion did not reproduce, but its root cause remains unknown. Grounded playback still uses Animator; matching is not yet implemented. Clean-checkout asset prerequisites, terrain/contact coverage and a target player build remain open.
+Foundation, directory consolidation, local legacy cleanup and the M2 database baker are implemented. M2 samples five unarmed clips at 60 Hz into 716 searchable rows, retaining 27D matching features, roots, joint velocities and 52 mapped local bone poses. Repeated baking and asset reload are byte-identical in the current Editor environment; the baker window provides trajectory and velocity inspection. See the [M2 report](migration/M2_IMPLEMENTATION_REPORT.md) and [feature contract](data/FEATURE_SCHEMA.md).
 
-The next milestone is animation feature extraction and deterministic database baking. After that, KD-tree is the first primary matching backend; brute force remains its correctness oracle and benchmark reference. The final success criterion is a playable portfolio demo whose movement quality is immediately visible, with the database, algorithms and performance evidence supporting that result.
+Fresh M2 validation passed 32 EditMode, 6 PlayMode and 31 Python tests, plus all 15 locomotion comparisons over a 1,141-frame capture. The historical Editor assertion recurred after capture restoration; a settled controlled Play cycle had zero errors/warnings, but the assertion's cause remains unresolved. Local model/skybox prerequisites, expanded source coverage, terrain/contact validation and a target player build remain open. Grounded gameplay still uses Animator and the existing CharacterMotor.
+
+The next technical milestone is M3: trajectory prediction, the brute-force correctness reference, primary KD-tree matching and validated matching playback over this common database. The final success criterion is a playable portfolio demo whose movement quality is immediately visible, with the database, algorithms and performance evidence supporting that result.

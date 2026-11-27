@@ -1,5 +1,6 @@
 using System;
 using MotionMatching.Core;
+using Unity.Profiling;
 using UnityEngine;
 
 namespace MotionMatching.Runtime
@@ -11,6 +12,7 @@ namespace MotionMatching.Runtime
     /// </summary>
     public sealed class CharacterMotor
     {
+        private static readonly ProfilerMarker MotorStepMarker = new ProfilerMarker("MotionMatching.MotorStep");
         private readonly CharacterController _controller;
         private readonly RootMotionAccumulator _rootMotion = new RootMotionAccumulator();
         private int _lastStepFrame = -1;
@@ -39,6 +41,7 @@ namespace MotionMatching.Runtime
 
         public void Step(Vector3 gameplayDeltaMeters, float deltaSeconds)
         {
+            using var motorScope = MotorStepMarker.Auto();
             if (_lastStepFrame == Time.frameCount) return;
             _lastStepFrame = Time.frameCount;
             _rootMotion.Consume(Time.frameCount, out float x, out float z);

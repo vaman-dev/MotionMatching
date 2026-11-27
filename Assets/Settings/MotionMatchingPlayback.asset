@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a1fd4d069ae2e4a942c7cef6f459cf, type: 3}
+  m_Name: MotionMatchingPlayback
+  m_EditorClassIdentifier: MotionMatching.Runtime::MotionMatching.Runtime.MotionMatchingSettings
+  WalkMetersPerSecond: 1.6
+  RunMetersPerSecond: 5.5
+  AccelerationMetersPerSecondSquared: 12
+  TurnRadiansPerSecond: 1.57
+  SearchIntervalSeconds: 0.1
+  BlendSeconds: 0.15
+  RequiredCostImprovement: 0.15
+  ContinuationWindowSeconds: 0.2
+  FaceCamera: 0
+  CompareBruteForce: 0
+  DrawDiagnostics: 1
+  Weights:
+    Groups:
+    - 10
+    - 2
+    - 1
+    - 0.25
+    - 0.25

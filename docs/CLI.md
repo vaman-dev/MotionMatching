@@ -19,17 +19,26 @@ py -3 -B tools/validate_migration.py --mode consolidation --baseline .utmp/conso
 codex
 ```
 
-Within Codex: run `/plan` before multi-file edits, ask for named agents (`github_agent`, `bug_agent`, `test_agent`, `documentation_agent`) explicitly as needed, use `/review` before commits and `/compact` after milestones. These are workflow conventions; actual CLI availability/menus depend on installed Codex version.
+Within Codex: plan substantial edits, review before commits and compact at milestone boundaries. Use one agent by default; ask for a named role only for substantial independent work or review. Slash-command availability depends on the installed client.
 
 Suggested first Codex instruction:
 
-> Read AGENTS.md, docs/PROJECT.md, docs/PLAN.md, docs/MotionMatchingArchitecture.md, docs/Unity.md and the original docs/Report.md. Inspect status and current milestone evidence before editing. Preserve unrelated working-tree changes and present a concrete dependency-aware plan.
+> Follow AGENTS.md and read docs/STATUS.md once. Inspect the scoped diff and affected source. Load only relevant contract sections; preserve unrelated changes. Plan substantial edits and run checks appropriate to the change.
+
+## Context and delegation budget
+
+- `docs/STATUS.md` is the short current-state entry point. PROJECT owns purpose, PLAN owns milestone gates, architecture/schema own contracts and PROGRESS owns dated evidence. Read relevant sections rather than every file.
+- Historical Report/ARCHITECTURE/newArch and migration reports are searchable references, not startup requirements. Keep original historical evidence intact.
+- Reuse information already read unless it changed. A delegate gets exact ownership, relevant paths, existing results and a compact expected response; omit full thread history when unnecessary. Do not rerun completed exploration or tests without a reason.
+- Keep raw logs in ignored local artifacts. Return counts, failure excerpts, paths and limitations. Use one coordinator for live Editor compilation/Play/test operations; do not run competing Editor jobs.
+- Use docs/link/config checks for prose/configuration changes; reserve Unity suites for affected Unity behavior. Record substantive changes, not every read-only answer, in PROGRESS. Update STATUS only when current facts change.
+- Keep account model defaults; do not assume a cheaper model is suitable for root-motion/math investigations. Select lower effort or a supported lower-cost model explicitly for narrow routine work when appropriate. No model override is required by this repository.
 
 The GitHub agent may **propose** commit and push commands, but it must not push without explicit approval. The owner removed the Codex GitHub Actions workflow. The project-scoped Codex agents and skills remain available; `.github/codex-review-prompt.md` remains a manual review template.
 
 ## Agent configuration and permission boundaries
 
-The four project roles are standalone TOML files in `.codex/agents/`, each with `name`, `description` and `developer_instructions`. Their instructions link to the matching `agents/*-agent.md` playbook and `.agents/skills/*/SKILL.md` workflow. `.codex/config.toml` enables agents and caps concurrent spawned threads at four, excluding the primary agent. No model is pinned.
+The four project roles are standalone TOML files in `.codex/agents/`, each with `name`, `description` and `developer_instructions`. Their instructions link to the matching `agents/*-agent.md` playbook and `.agents/skills/*/SKILL.md` workflow. `.codex/config.toml` enables agents and caps concurrent spawned threads at two, excluding the primary agent. The cap limits concurrency, not total token usage. No model is pinned; agents inherit parent settings unless explicitly configured otherwise. Apply changed startup guidance/configuration in a new CLI session; an existing thread may retain earlier context.
 
 Custom agents inherit the parent's permissions. A `sandbox_mode` value in a standalone custom agent file does not create a separate sandbox. `bug_agent` is instructed to remain read-only; for an enforced read-only session, select read-only permissions on the parent before delegation. See the [official OpenAI subagent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents).
 

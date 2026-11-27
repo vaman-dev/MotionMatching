@@ -1,8 +1,10 @@
+using Unity.Profiling;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class RootMotionRelay : MonoBehaviour
 {
+    private static readonly ProfilerMarker RootMotionMarker = new ProfilerMarker("MotionMatching.RootMotionRelay");
     [Header("References")]
     [SerializeField] private Animator animator;
     [SerializeField] private PlayerController playerController;
@@ -17,6 +19,7 @@ public class RootMotionRelay : MonoBehaviour
     [SerializeField] private string rootMotionActionTag = "RootMotionAction";
 
     private int speedHash;
+    private int lastMatchingRootFrame = -1;
 
     private void Awake()
     {
@@ -35,6 +38,7 @@ public class RootMotionRelay : MonoBehaviour
 
     private void OnAnimatorMove()
     {
+        using var rootMotionScope = RootMotionMarker.Auto();
         if (!isActiveAndEnabled || !useRootMotionMovement)
             return;
 
@@ -42,6 +46,23 @@ public class RootMotionRelay : MonoBehaviour
             return;
 
         Vector3 deltaPosition = animator.deltaPosition;
+        MotionMatching.Runtime.MotionMatchingController matching = playerController.MotionMatching;
+        if (matching != null && matching.IsReady)
+        {
+            if (matching.IsMatching)
+            {
+                // Normal/GameTime animation owns one evaluated root submission per
+                // rendered frame. A late/manual extra callback must not replay it.
+                if (lastMatchingRootFrame == Time.frameCount) return;
+                lastMatchingRootFrame = Time.frameCount;
+                matching.Playback.ReadRootMotion(Time.deltaTime, out deltaPosition, out Quaternion deltaRotation);
+                deltaPosition.y = 0f;
+                matching.RecordRootMotion(deltaPosition, deltaRotation);
+                playerController.ApplyRootMotionMovement(deltaPosition);
+                if (matching.OwnsGroundedYaw) playerController.ApplyRootMotionRotation(deltaRotation);
+                return;
+            }
+        }
 
         // In aim mode, input owns the horizontal direction while the selected
         // animation clip only supplies stride length.  This prevents clips
@@ -70,7 +91,7 @@ public class RootMotionRelay : MonoBehaviour
         // scheduled independently by PlayerController.LateUpdate.
         if (
             ignoreMovementRootMotionWhenIdle &&
-            Mathf.Abs(animator.GetFloat(speedHash)) < 0.01f &&
+            Mathf.Abs(playerController.PlayerAnimator.ReadFloat(speedHash)) < 0.01f &&
             !HasAuthoredActionRootMotion()
         )
         {
@@ -89,7 +110,8 @@ public class RootMotionRelay : MonoBehaviour
     private bool HasAuthoredActionRootMotion()
     {
         if (string.IsNullOrEmpty(rootMotionActionTag)) return false;
-        return animator.GetCurrentAnimatorStateInfo(0).IsTag(rootMotionActionTag) ||
-            (animator.IsInTransition(0) && animator.GetNextAnimatorStateInfo(0).IsTag(rootMotionActionTag));
+        PlayerAnimator facade = playerController.PlayerAnimator;
+        return facade.ReadState(0).IsTag(rootMotionActionTag) ||
+            (facade.IsTransitioning(0) && facade.ReadNextState(0).IsTag(rootMotionActionTag));
     }
 }

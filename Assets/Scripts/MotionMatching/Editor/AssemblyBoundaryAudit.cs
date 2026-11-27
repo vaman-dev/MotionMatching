@@ -20,12 +20,22 @@ namespace MotionMatching.Editor
                 errors.Add("Runtime references UnityEditor.");
 
             const string sourceRoot = "Assets/Scripts/MotionMatching/";
+            // Verified imported vendor scripts. Never capture them in project assemblies.
+            var vendorSources = new HashSet<string> {
+                "Assets/Kevin Iglesias/Human Animations/Scripts/SpineProxy.cs",
+                "Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Human Basic Motions/Script/HumanBasicMotionsDemo.cs"
+            };
             foreach (var assembly in assemblies)
             {
                 foreach (string file in assembly.sourceFiles)
                 {
                     string path = file.Replace('\\', '/');
                     if (!path.StartsWith("Assets/")) continue;
+                    if (vendorSources.Contains(path))
+                    {
+                        if (assembly.name.StartsWith("MotionMatching.")) errors.Add("Vendor source captured by project assembly: " + path);
+                        continue;
+                    }
                     if (!path.StartsWith(sourceRoot))
                         errors.Add("Project source outside authoritative root: " + path);
                     if (assembly.name.StartsWith("Assembly-CSharp"))

@@ -10,7 +10,7 @@ except ImportError:  # Python 3.10 can still run JSON, file and migration checks
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
-    'README.md', 'docs/PROJECT.md', 'docs/MotionMatchingArchitecture.md', 'docs/PLAN.md',
+    'README.md', 'docs/STATUS.md', 'docs/PROJECT.md', 'docs/MotionMatchingArchitecture.md', 'docs/PLAN.md',
     'docs/Unity.md', 'docs/ReusablePackages.md', 'docs/PROGRESS.md', 'docs/Report.md', 'AGENTS.md',
     '.codex/config.toml',
     '.github/workflows/github.yml',
