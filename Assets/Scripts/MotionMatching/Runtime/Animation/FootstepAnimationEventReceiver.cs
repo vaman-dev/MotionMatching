@@ -41,9 +41,11 @@ public class FootstepAnimationEventReceiver : MonoBehaviour
     private float blockedUntilTime;
     private float originalPitch;
     private int footstepVolumeHash;
+    private PlayerAnimator playerAnimator;
 
     private void Awake()
     {
+        playerAnimator = GetComponent<PlayerAnimator>();
         if (animator == null)
             animator = GetComponent<Animator>();
 
@@ -117,7 +119,7 @@ public class FootstepAnimationEventReceiver : MonoBehaviour
 
         if (blockFootstepsDuringAnimatorTransition && animator != null)
         {
-            if (animator.IsInTransition(animatorLayerIndex))
+            if (playerAnimator != null ? playerAnimator.IsTransitioning(animatorLayerIndex) : animator.IsInTransition(animatorLayerIndex))
             {
                 blockedUntilTime = Mathf.Max(blockedUntilTime, Time.time + resetDelayAfterStateChange);
 
@@ -147,7 +149,7 @@ public class FootstepAnimationEventReceiver : MonoBehaviour
 
         if (useAnimatorFootstepVolume && animator != null)
         {
-            finalVolume *= Mathf.Clamp01(animator.GetFloat(footstepVolumeHash));
+            finalVolume *= Mathf.Clamp01(playerAnimator != null ? playerAnimator.ReadFloat(footstepVolumeHash) : animator.GetFloat(footstepVolumeHash));
         }
 
         audioSource.pitch = Random.Range(

@@ -78,7 +78,11 @@ public class PlayerLocomotionState : IPlayerState
         // ROTATION
         // =====================================================
 
-        if (isAiming)
+        if (player.UsesMatchingLocomotion)
+        {
+            // The matching output owns grounded yaw; actions retain their existing policy.
+        }
+        else if (isAiming)
         {
             /*
              * TPS AIM MODE

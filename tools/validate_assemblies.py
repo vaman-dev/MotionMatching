@@ -5,6 +5,11 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = Path('Assets/Scripts/MotionMatching')
+# Reviewed vendor sources; leave their ownership with the imported package.
+VENDOR_SOURCES = {
+    'Assets/Kevin Iglesias/Human Animations/Scripts/SpineProxy.cs',
+    'Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Human Basic Motions/Script/HumanBasicMotionsDemo.cs',
+}
 FOLDERS = {
     'MotionMatching.Core': 'Core',
     'MotionMatching.Runtime': 'Runtime',
@@ -22,6 +27,7 @@ PROJECT_REFERENCES = {
 PACKAGE_NAMESPACES = {
     'Unity.InputSystem': r'\bUnityEngine\s*\.\s*InputSystem\b',
     'Unity.Cinemachine': r'\bUnity\s*\.\s*Cinemachine\b',
+    'Unity.Collections': r'\bUnity\s*\.\s*Collections\b',
     'Unity.Animation.Rigging': r'\bUnityEngine\s*\.\s*Animations\s*\.\s*Rigging\b',
 }
 
@@ -128,6 +134,8 @@ def validate_assemblies(root=ROOT):
     sources = {name: [] for name in FOLDERS}
     for path in (root/'Assets').rglob('*.cs'):
         relative = path.relative_to(root).as_posix()
+        if relative in VENDOR_SOURCES:
+            continue
         owners = [(len(owner.parent.parts), name) for owner, name in expected_paths.items()
                   if path.is_relative_to(owner.parent)]
         if not path.is_relative_to(root/BASE) or not owners:

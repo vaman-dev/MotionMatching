@@ -104,6 +104,14 @@ class TestAssemblyBoundaries(unittest.TestCase):
         errors = validate_assemblies(self.root)
         self.assertEqual(2, sum('outside an owned assembly' in error for error in errors))
 
+    def test_reviewed_vendor_sources_are_exempt_but_adjacent_project_code_is_not(self):
+        vendor = self.root/'Assets/Kevin Iglesias/Human Animations/Scripts/SpineProxy.cs'
+        vendor.parent.mkdir(parents=True)
+        vendor.write_text('class SpineProxy {}', encoding='utf-8')
+        self.assertEqual([], validate_assemblies(self.root))
+        (vendor.parent/'Unreviewed.cs').write_text('class Unreviewed {}', encoding='utf-8')
+        self.assertTrue(any('outside an owned assembly' in error for error in validate_assemblies(self.root)))
+
     def test_core_api_and_nested_editor_leak_are_rejected(self):
         (self.path('MotionMatching.Core').parent/'EngineLeak.cs').write_text('using UnityEngine;', encoding='utf-8')
         editor = self.path('MotionMatching.Runtime').parent/'Editor/Leak.cs'

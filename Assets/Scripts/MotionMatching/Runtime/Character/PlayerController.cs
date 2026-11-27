@@ -151,6 +151,10 @@ public class PlayerController : MonoBehaviour
     public Transform CameraTransform => cameraTransform;
 
     public bool IsGrounded => isGrounded;
+    public PlayerStateId CurrentStateId => stateMachine != null ? stateMachine.CurrentStateId : PlayerStateId.Locomotion;
+    public MotionMatchingController MotionMatching { get; private set; }
+    public void BindMotionMatching(MotionMatchingController matching) => MotionMatching = matching;
+    public bool UsesMatchingLocomotion => MotionMatching != null && MotionMatching.OwnsGroundedYaw && CurrentStateId == PlayerStateId.Locomotion;
 
     public float MinJumpStateTime => minJumpStateTime;
 
@@ -418,6 +422,20 @@ public class PlayerController : MonoBehaviour
             Quaternion.LookRotation(
                 direction.normalized
             );
+
+        // Matching clips in the active dataset turn at roughly 90 degrees per
+        // second. Keep input-owned grounded yaw within the same configured
+        // turn rate, including when a long rendered frame spans a reversal.
+        // Authored root yaw and the retained Jump/Dive Roll policy are separate.
+        if (CurrentStateId == PlayerStateId.Locomotion &&
+            MotionMatching != null && MotionMatching.IsReady &&
+            !MotionMatching.Settings.ApplyRootYaw)
+        {
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation, targetRotation,
+                MotionMatching.Settings.TurnRadiansPerSecond * Mathf.Rad2Deg * Time.deltaTime);
+            return;
+        }
 
         float t =
             1f - Mathf.Exp(

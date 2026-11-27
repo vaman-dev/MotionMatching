@@ -270,9 +270,17 @@ public static class MigrationBaselineCapture
             _diveState |= _stateMachine.CurrentStateId == PlayerStateId.DiveRoll;
             Animator animator = _player.PlayerAnimator.UnityAnimator;
             if (animator == null) throw new InvalidOperationException("Player Animator is missing.");
-            AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+            AnimatorStateInfo state = _player.PlayerAnimator.ReadState(0);
             var clips = new List<string>();
-            foreach (AnimatorClipInfo clip in animator.GetCurrentAnimatorClipInfo(0)) clips.Add(clip.clip.name);
+            var matching = _player.MotionMatching;
+            if (matching != null && matching.IsMatching && matching.CurrentClipIndex >= 0)
+                clips.Add(matching.Database.SourceClips[matching.CurrentClipIndex].name);
+            else if (matching != null && matching.IsReady)
+            {
+                foreach (AnimatorClipInfo clip in matching.Playback.Controller.GetCurrentAnimatorClipInfo(0)) clips.Add(clip.clip.name);
+            }
+            else
+                foreach (AnimatorClipInfo clip in animator.GetCurrentAnimatorClipInfo(0)) clips.Add(clip.clip.name);
             Camera camera = Camera.main;
             _capture.samples.Add(new Sample {
                 requestedScenario = scenario, scenarioElapsedSeconds = elapsed,
